@@ -1,6 +1,6 @@
 //word counter using HashedMap
 
-package myExercises2;
+package Java_Basics;
 
 import java.util.*;
 
@@ -10,6 +10,7 @@ public static void main (String[]args)
 	Scanner sc = new Scanner (System.in);
 	Map <Character,Integer> m = new HashMap <Character,Integer>();
 
+	
 	System.out.print("Enter paragraph: ");
 	String p = sc.nextLine().trim().toLowerCase();
 	
@@ -21,7 +22,9 @@ public static void main (String[]args)
 			m.put(p.charAt(i), 0);
 	}
 	
-	System.out.print("\n"+m);
+	System.out.print("\n************************************************\n");
+	System.out.print("\nCharacter Count\n");
+	System.out.print(m);
 	sc.close();
 	
 }
