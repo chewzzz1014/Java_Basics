@@ -1,6 +1,6 @@
 //introductory practices on loop part 13
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Repetition12 {

@@ -1,6 +1,6 @@
 //introductory practices on nested loop and subroutine part 11
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Subroutine10 {

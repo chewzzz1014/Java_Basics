@@ -1,6 +1,6 @@
 //word counter using HashedMap
 
-package Java_Basics;
+
 
 import java.util.*;
 

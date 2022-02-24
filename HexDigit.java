@@ -2,7 +2,7 @@
 //involves selection statements
 
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class HexDigit {

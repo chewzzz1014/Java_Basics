@@ -1,7 +1,7 @@
 //introductory practices on selection statement part 2
 //basic arithmetic
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Selection1 {

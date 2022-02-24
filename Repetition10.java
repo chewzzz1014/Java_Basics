@@ -1,6 +1,6 @@
 //introductory practices on loop part 11
 
-package myExercises;
+
 
 public class Repetition10 {
 public static void main (String[]args)

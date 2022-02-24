@@ -3,7 +3,7 @@
 
 
 
-package myExercises;
+
 import java.util.Scanner;
 
 

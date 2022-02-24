@@ -1,7 +1,7 @@
 //introductory practices on loop part 3
 //basic arithmetic
 
-package myExercises;
+
 import java.util.*;
 
 public class Repetition2 {

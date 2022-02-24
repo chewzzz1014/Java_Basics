@@ -1,6 +1,6 @@
 //introductory practices on nested loop and subroutine part 9
 
-package myExercises;
+
 import java.util.*;
 
 public class Subroutine8 {

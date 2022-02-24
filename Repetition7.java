@@ -1,6 +1,6 @@
 //introductory practices on loop part 8
 
-package myExercises;
+
 import java.util.*;
 
 public class Repetition7 {

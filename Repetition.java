@@ -1,7 +1,7 @@
 //introductory practices on loop part 1
 //basic arithmetic
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Repetition {
@@ -12,7 +12,7 @@ public static void main (String[]args)
 	double price,totalPrice=0;
 	
 	Scanner sc=new Scanner (System.in);
-	System.out.print("ENTER 0 TO STOP");
+	System.out.println("ENTER 0 TO STOP");
 	System.out.print("***********Products Available***************");
 	System.out.print("\n\t\tProduct 1-RM2.98");
 	System.out.print("\n\t\tProduct 2-RM4.50");

@@ -1,6 +1,6 @@
 //introductory practices on loop part 9
 
-package myExercises;
+
 
 public class Repetition8 {
 

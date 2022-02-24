@@ -1,7 +1,7 @@
 //introductory practices on subroutine part 8
 
 
-package myExercises;
+
 import java.util.*;
 
 public class Subroutine7 {

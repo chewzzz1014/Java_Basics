@@ -1,7 +1,7 @@
 //introductory operations on 1D array
 //find max and count number of occurence of max
 
-package myExercises;
+
 import java.util.*;
 
 public class Array1 {

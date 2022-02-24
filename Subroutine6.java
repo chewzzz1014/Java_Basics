@@ -2,7 +2,7 @@
 //selection
 
 
-package myExercises;
+
 import java.util.*;
 
 public class Subroutine6 {

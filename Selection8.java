@@ -2,7 +2,6 @@
 //basic comparison of 2 letters
 
 
-package myExercises;
 import java.util.Scanner;
 
 public class Selection8 {

@@ -1,7 +1,7 @@
 //introductory practices on selection statement part 5
 
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Selection4 {

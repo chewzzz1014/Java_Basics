@@ -1,7 +1,7 @@
 //introductory practices on nested loop and subroutine part 1
 
 
-package myExercises;
+
 import java.util.Scanner;
 
 public class Subroutine {
