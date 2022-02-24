@@ -19,7 +19,7 @@ public static void main (String[]args)
 		if (m.containsKey(p.charAt(i)) )
 			m.put(p.charAt(i), m.get(p.charAt(i))+1);
 		else
-			m.put(p.charAt(i), 0);
+			m.put(p.charAt(i), 1);
 	}
 	
 	System.out.print("\n************************************************\n");
