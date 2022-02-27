@@ -1,7 +1,7 @@
 //introductory practices on selection statement part 14
 //basic arithmetic
 
-
+package selection;
 import java.util.Scanner;
 
 public class Selection13 {

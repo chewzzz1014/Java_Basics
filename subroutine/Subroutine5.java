@@ -1,7 +1,7 @@
 //introductory practices on nested loop part 6
 //array, selection, repetition
 
-
+package subroutine;
 import java.util.Scanner;
 
 public class Subroutine5 {

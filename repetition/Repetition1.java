@@ -1,7 +1,7 @@
 //introductory practices on loop part 2
 //basic arithmetic
 
-
+package repetition;
 
 import java.util.Scanner;
 

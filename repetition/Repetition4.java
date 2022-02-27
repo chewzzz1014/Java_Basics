@@ -1,6 +1,6 @@
 //introductory practices on loop part 5
 
-
+package repetition;
 import java.util.*;
 
 public class Repetition4 {

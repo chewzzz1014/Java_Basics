@@ -1,4 +1,4 @@
-//introductory practices on loop part 13
+package repetition;//introductory practices on loop part 13
 
 
 import java.util.Scanner;

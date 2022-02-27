@@ -1,6 +1,7 @@
 //introductory practices on selection statement part 11
 //basic comparison between strings
 
+package selection;
 import java.util.Scanner;
 
 public class Selection10 {

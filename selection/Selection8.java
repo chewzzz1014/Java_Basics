@@ -1,7 +1,7 @@
 //introductory practices on selection statement part 9
 //basic comparison of 2 letters
 
-
+package selection;
 import java.util.Scanner;
 
 public class Selection8 {

@@ -2,7 +2,7 @@
 //Modifying strings
 
 
-
+package selection;
 import java.util.Scanner;
 
 public class Selection7 {

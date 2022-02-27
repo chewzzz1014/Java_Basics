@@ -1,4 +1,4 @@
-//introductory practices on loop part 12
+package repetition;//introductory practices on loop part 12
 
 
 import java.util.*;

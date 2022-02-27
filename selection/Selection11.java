@@ -1,5 +1,5 @@
 //introductory practices on selection statement part 12
-
+package selection;
 
 import java.util.Scanner;
 

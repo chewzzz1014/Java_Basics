@@ -1,7 +1,7 @@
 //introductory practices on  subroutine part 5
 //repetition and selection
 
-
+package subroutine;
 import java.util.Scanner;
 
 public class Subroutine4 {

@@ -2,7 +2,7 @@
 //basic arithmetic
 
 
-
+package selection;
 import java.util.Scanner;
 
 public class Selection5 {

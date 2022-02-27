@@ -1,6 +1,6 @@
 //introductory practices on subroutine part 10
 
-
+package subroutine;
 import java.util.Scanner;
 
 public class Subroutine9{

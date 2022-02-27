@@ -2,7 +2,7 @@
 //selection
 
 
-
+package subroutine;
 import java.util.*;
 
 public class Subroutine6 {
