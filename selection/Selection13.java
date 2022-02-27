@@ -43,7 +43,7 @@ public class Selection13 {
 	 double serviceCharge=subTotal*SERVCHARGE;
 	 double total=subTotal+governmentTax+serviceCharge; //subTotal governmentTax serviceCharge
 	 System.out.printf("\n\nSubtotal: RM%.2f\nGovernment Tax: RM%.2f\nService Charge: RM%.2f",subTotal,governmentTax,serviceCharge,serviceCharge);
-	 System.out.print("\n\nTotal: RM"+total);
+	 System.out.printf("\n\nTotal: RM%.2f",total);
 	 
 	 //determine price after discount
 	 double price;
@@ -52,7 +52,7 @@ public class Selection13 {
 	 else
 	    price =total;
 	 System.out.print("\n*If total > RM50, you will get 20% discount.");
-	 System.out.print("\nPrice after discount is RM "+price);
+	 System.out.printf("\nPrice after discount is RM%.2f",price);
 	 sc.close();
  }
 }
