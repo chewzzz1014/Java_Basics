@@ -6,7 +6,7 @@ public class Book {
 	private static double total;
 	
 	Book(){
-		total += price;		//by default, price is 0
+		total += price;		//by default, price is 0 and title is null
 	}
 	
 	Book(String title, double price){
