@@ -1,4 +1,4 @@
-
+// CHEW ZI QING 212360
 
 public class Course {
 
@@ -8,12 +8,13 @@ public class Course {
 	private int numOfStudents;
 	private int currIdxStudents = 0;	//keep track of current index in array students
 	
+	// constructor of class Course
 	Course(String courseName){
 		this.courseName = courseName;
 		System.out.println("How many students in this course? ");
 		
 		java.util.Scanner sc = new java.util.Scanner (System.in);
-		numOfStudents = sc.nextInt();		//asking for size of array students for every object of Course created
+		numOfStudents = sc.nextInt();		//asking for size of array students of every object of Course created
 		
 		students = new String[numOfStudents];
 		
@@ -35,6 +36,4 @@ public class Course {
 	int getNumOfStudents() {		//accessor of number of students in this course
 		return numOfStudents;
 	}
-	
-	
 }

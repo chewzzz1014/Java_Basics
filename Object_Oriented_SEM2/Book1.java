@@ -1,15 +1,16 @@
 
-public class Book {
+public class Book1 {
+
 	
 	private String title;
 	private double price;
 	private static double total;
 	
-	Book(){
+	Book1(){
 		total += price;		//by default, price is 0 and title is null
 	}
 	
-	Book(String title, double price){
+	Book1(String title, double price){
 		this.title = title;
 		this.price = price;
 		total += price;
@@ -31,4 +32,5 @@ public class Book {
 		total += price;
 	}
 	
+
 }
