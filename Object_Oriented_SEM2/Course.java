@@ -2,37 +2,37 @@
 
 public class Course {
 
+	//data fields of class Course
 	private String courseName;
-	private String[] students;
+	private String[] students;		
 	private int numOfStudents;
-	private int currIdxStudents = 0;
+	private int currIdxStudents = 0;	//keep track of current index in array students
 	
 	Course(String courseName){
 		this.courseName = courseName;
 		System.out.println("How many students in this course? ");
 		
 		java.util.Scanner sc = new java.util.Scanner (System.in);
-		numOfStudents = sc.nextInt();
+		numOfStudents = sc.nextInt();		//asking for size of array students for every object of Course created
 		
 		students = new String[numOfStudents];
 		
-		sc.close();
 	}
 	
-	String getCourseName() {
+	String getCourseName() {	//accessor of courseName
 		return courseName;
 	}
 	
-	void addStudent (String name) {
-		students[currIdxStudents] = name;
-		currIdxStudents++;
+	void addStudent (String name) {		//add student into array
+		students[currIdxStudents] = name;	//assigned "name" into index "currIdxStudents" of array students
+		currIdxStudents++;		//move from (current index) to (current index + 1)
 	}
 	
-	String[] getStudents() {
+	String[] getStudents() {	//accessor of array students
 		return students;
 	}
 	
-	int getNumOfStudents() {
+	int getNumOfStudents() {		//accessor of number of students in this course
 		return numOfStudents;
 	}
 	
