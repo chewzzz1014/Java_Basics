@@ -1,4 +1,4 @@
-
+// CHEW ZI QING 212360
 public class Food {
 	
 	//data fields of class Food
@@ -10,7 +10,6 @@ public class Food {
 	
 	// constructor 1 that accepts no argument
 	Food(){
-		
 	}
 	
 	// constructor 2 that accepts 3 arguments

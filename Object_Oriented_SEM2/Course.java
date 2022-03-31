@@ -1,5 +1,4 @@
 // CHEW ZI QING 212360
-
 public class Course {
 
 	//data fields of class Course
