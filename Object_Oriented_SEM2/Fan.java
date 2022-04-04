@@ -1,3 +1,4 @@
+//Week 1
 
 public class Fan {
 	//static constant of class Fan. access them through className.staticDataFields

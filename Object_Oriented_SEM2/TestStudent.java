@@ -1,3 +1,4 @@
+//Week 1
 //CHEW ZI QING 212360
 public class TestStudent {
 	public static void main (String[] args) {
