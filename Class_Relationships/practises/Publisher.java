@@ -41,4 +41,8 @@ public class Publisher extends BasicsInfo{
 		numPublication++;
 	}
 	
+	public void printDetails() { 
+		System.out.printf("%-7s\n\nName: %1s\nLocation: %1s\nCountry: %1s\nEmail: %1s\nContact Number: %1s\nHas digital store: %1b\nPublication: %1d\n", "[Publisher]", this.getName(), this.getAddress(), this.getCountry(),  this.getEmail(), this.getContactNum(), this.getHasDigital(), this.getNumPublication());
+	}
+	
 }

@@ -19,4 +19,8 @@ public class Article extends Publication{
 		public void setVolume(int volume) {
 			this.volume = volume;
 		}
+		
+		public void printDetail() {
+			System.out.printf("\n[Article]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nVolume: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getVolume() );
+		}
 }

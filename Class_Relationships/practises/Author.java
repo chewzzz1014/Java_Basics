@@ -44,5 +44,9 @@ public class Author extends BasicsInfo {
 		this.gender = gender;
 	}
 	
+	public void printDetails() {
+		System.out.printf("\n[Author]\n\nName: %1s\nGender: %1c\nOrganization: %1s\nEmail: %1s\nCountry: %1s\nAddress: %1s\nContact Number: %1s\n ", this.getName(), this.getGender(), this.getOrganzation(), this.getEmail(), this.getCountry(), this.getAddress(), this.getContactNum());
+	}
+	
 	
 }

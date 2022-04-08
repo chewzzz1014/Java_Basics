@@ -21,4 +21,8 @@ public class Book extends Publication {
 		public void setEdition(int edition) {
 			this.edition = edition;
 		}
+		
+		public void printDetail() {
+			System.out.printf("\n[Book]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nEdition: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getEdition() );
+		}
 }
