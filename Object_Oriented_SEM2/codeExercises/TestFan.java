@@ -1,3 +1,4 @@
+package codeExercises;
 // Week 1
 //CHEW ZI QING 212360
 public class TestFan {

@@ -1,3 +1,4 @@
+package codeExercises;
 
 
 // Week 2
