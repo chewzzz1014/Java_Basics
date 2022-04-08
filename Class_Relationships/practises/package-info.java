@@ -13,4 +13,4 @@
  *@author CHEW ZI QING
  */
 
-package myPractises2;
+package practises;

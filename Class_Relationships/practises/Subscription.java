@@ -1,4 +1,4 @@
-package myPractises2;
+package practises;
 
 public class Subscription {
 

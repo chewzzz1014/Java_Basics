@@ -14,7 +14,7 @@ public class Selection1 {
 	 final double GTAX=0.06;
 	 final double SERVCHARGE=0.1;
 	 
-	 //requst input
+	 //request input
 	 System.out.print("Item 1: ");
 	 String name1=sc.nextLine();
 	 System.out.print("\nQuantity: ");
