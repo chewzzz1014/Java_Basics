@@ -7,7 +7,8 @@ public class Repetition6 {
 public static void main (String[]args)
 {
 	Scanner sc=new Scanner (System.in);
-	int num,min=0,count=0;
+	int num,min=0;
+	//int count=0;
 	
 	System.out.print("\nEnter 5 integers: ");
 	

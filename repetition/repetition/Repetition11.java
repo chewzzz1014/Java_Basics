@@ -26,7 +26,7 @@ public static void main (String[]args)
 		System.out.print("\nMark of Test 3: ");
 		mark3=sc.nextInt();
 		yourAvgMark=(mark1+mark2+mark3)/3;
-		System.out.printf("Average Mark: %.2f\n\n",yourAvgMark);
+		System.out.printf("Student: %1s\nMatric Number: %1s\nAverage Mark: %.2f\n\n",name,matricNum, yourAvgMark);
 		totalMark+=mark1+mark2+mark3;
 	}
 	avgMark=totalMark/num;

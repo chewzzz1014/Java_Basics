@@ -1,6 +1,5 @@
 package oop;
 
-import java.io.PrintStream;
 
 public class testCircle {
     public static void main (String[]args){
