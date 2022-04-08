@@ -4,4 +4,4 @@
  * 
  * @author CHEW ZI QING
  */
-package codeExercises;
+package code;

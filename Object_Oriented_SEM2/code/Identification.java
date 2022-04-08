@@ -1,4 +1,4 @@
-package codeExercises;
+package code;
 // Week 1
 public class Identification {
 	//private data fields

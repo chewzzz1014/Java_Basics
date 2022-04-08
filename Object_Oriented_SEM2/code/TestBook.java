@@ -1,5 +1,4 @@
-package codeExercises;
-
+package code;
 
 // Week 2
 // CHEW ZI QING 212360
