@@ -9,8 +9,8 @@ public class Book extends Publication {
 			this.edition = 1;
 		}
 		
-		Book(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher, int edition){
-			super(author, title, pgNum, year, hasDigital, publisher);
+		Book(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher, int edition, double price){
+			super(author, title, pgNum, year, hasDigital, publisher, price);
 			this.edition = edition;
 		}
 		
@@ -23,6 +23,6 @@ public class Book extends Publication {
 		}
 		
 		public void printDetail() {
-			System.out.printf("\n[Book]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nEdition: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getEdition() );
+			System.out.printf("\n[Book]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nEdition: %1d\nPrice: RM%.2f\nNum of Subscribers: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getEdition(), this.getSubscription().getPrice(), this.getSubscription().getNumSubscriber() );
 		}
 }

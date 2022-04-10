@@ -7,19 +7,24 @@ public class Publication {
 	private String title;
 	private int pgNum, year;
 	private boolean hasDigital;
+	private double price = 0;
+	private Subscription subscription;
+
 	
 	Publication(String title){
-		this(null, title, 0, 0000, false, null);
+		this(null, title, 0, 0000, false, null, 0);
 	}
 	
-	Publication(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher){
+	Publication(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher, double price){
 		this.author = author;
 		this.title = title;
 		this.pgNum = pgNum;
 		this.year = year;
 		this.hasDigital = hasDigital;
 		this.publisher = publisher;
+		this.price = price;
 		publisher.incrementNumPublication();
+		subscription = new Subscription(price);
 	}
 	
 	public Author getAuthor() {
@@ -44,6 +49,10 @@ public class Publication {
 	
 	public boolean getHasDigital() {
 		return this.hasDigital;
+	}
+	
+	public Subscription getSubscription() {
+		return this.subscription;
 	}
 	
 	

@@ -11,11 +11,11 @@ public class Main {
 		
 		// author: String name, String address, String organization, String email, String country, char gender, String contactNum
 		// author : name , organization
-		Book b1 = new Book( new Author("QK", "Dewan Bahasa & Pustaka"), "Wild", 234, 2022, false, pelangi, 1);
+		Book b1 = new Book( new Author("QK", "Dewan Bahasa & Pustaka"), "Wild", 234, 2022, false, pelangi, 1, 25.99);
 		
-		Article a1 = new Article( new Author("Abdul", "Jalan 123 51222", "MoHE", "abdul@mohe.my", "Malaysia", 'm', "012345677"), "The Impacts of Covid-19", 12, 2019, true, pelangi, 1);
+		Article a1 = new Article( new Author("Abdul", "Jalan 123 51222", "MoHE", "abdul@mohe.my", "Malaysia", 'm', "012345677"), "The Impacts of Covid-19", 12, 2019, true, pelangi, 1, 59.00);
 		
-		TechReport t1 = new TechReport( new Author("Abdul", "Jalan 123 51222", "MoHE", "abdul@mohe.my", "Malaysia", 'm', "012345677"), "Technology of Mobility Learning", 50, 2021, true, pelangi, 123456789101L);
+		TechReport t1 = new TechReport( new Author("Abdul", "Jalan 123 51222", "MoHE", "abdul@mohe.my", "Malaysia", 'm', "012345677"), "Technology of Mobility Learning", 50, 2021, true, pelangi, 123456789101L, 28.50);
 		
 		System.out.println("*****************************************");
 		pelangi.printDetails();

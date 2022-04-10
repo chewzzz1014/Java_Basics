@@ -9,8 +9,8 @@ public class TechReport extends Publication {
 		this.reportNum = 000000000000L;
 	}
 	
-	TechReport(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher, long reportNum){
-		super(author, title, pgNum, year, hasDigital, publisher);
+	TechReport(Author author, String title, int pgNum, int year, boolean hasDigital, Publisher publisher, long reportNum, double price){
+		super(author, title, pgNum, year, hasDigital, publisher, price);
 		this.reportNum = reportNum;
 	}
 	
@@ -23,6 +23,6 @@ public class TechReport extends Publication {
 	}
 	
 	public void printDetail() {
-		System.out.printf("\n[Technical Report]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nReport Number: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getReportNum() );
+		System.out.printf("\n[Technical Report]\n\nTitle: %1s\nAuthor: %1s\nNumber of pages: %1d\nYear of Publication: %1d\nHas digital version: %1b\nPublisher: %1s\nReport Number: %1d\nPrice: RM%.2f\nNum of Subscribers: %1d\n", this.getTitle(), this.getAuthor().getName(), this.getPgNum(), this.getYear(), this.getHasDigital(), this.getPublisher().getName(), this.getReportNum(), this.getSubscription().getPrice(), this.getSubscription().getNumSubscriber() );
 	}
 }
