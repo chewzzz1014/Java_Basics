@@ -1,6 +1,6 @@
 // Week 4
 // CHEW ZI QING 212360
-package code;
+package week4;
 
 public class Student {
 	
@@ -56,8 +56,8 @@ public class Student {
 	
 	// return the data fields in one string
 	public String toString() {
-		String out = "Student\nMatric: "+this.getMatric()+"\nName: "+this.getName()+"\nGPA: "+this.getGpa();
-		return out+"\nE-mail: "+this.getEmail();
+		String out = "Student\nMatric: "+this.getMatric()+"\nName: "+this.getName()+"\nE-mail: "+this.getEmail()+"\nGPA: "+this.getGpa();
+		return out;
 	}
 	
 }

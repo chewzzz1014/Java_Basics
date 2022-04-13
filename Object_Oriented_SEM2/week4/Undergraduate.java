@@ -1,6 +1,6 @@
 // Week 4
 // CHEW ZI QING 212360
-package code;
+package week4;
 
 public class Undergraduate extends Student{
 	private String classification;

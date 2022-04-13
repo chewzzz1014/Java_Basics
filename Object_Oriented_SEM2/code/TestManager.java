@@ -18,9 +18,10 @@ public class TestManager {
 		//printManagerDetails(m1);
 	}
 	
-	/*
-	 * or use submethod in main class
-	 * 
+	
+	/* 
+	//or use submethod in main class
+	  
 	public static void printStaffDetails(Staff s) {
 		System.out.printf("Staff ID: %1d\nSalary: %.1f\nBonus: %.1f\n\n", s.getStaffID(), s.getSalary(), s.bonus());
 	}

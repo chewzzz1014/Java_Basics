@@ -1,4 +1,4 @@
-package code;
+package week4;
 
 public class TestStudent {
 	public static void main (String[]args) {
