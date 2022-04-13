@@ -1,14 +1,17 @@
+// Week 4 Question 2
+// CHEW ZI QING 212360
 package week4;
 
 public class GradeActivity {
-	
+	//private data fields
 	private double score;
 	private char grade;
 	
 	GradeActivity(){
-		
+	//no-args constructor that did nothing. Declared to avoid error when another class inherits this class	
 	}
 	
+	//accessor of private data field so that this class's subclass can access private data fields as well
 	public double getScore() {
 		return this.score;
 	}
@@ -17,6 +20,7 @@ public class GradeActivity {
 		return grade;
 	}
 	
+	//setter of private data field so that this class's subclass can modify private data fields as well
 	public void setScore(double score) {
 		this.score = score;
 	}
@@ -39,6 +43,7 @@ public class GradeActivity {
 		this.grade = grade;	
 	}
 	
+	//return data fields in a string
 	public String toString() {
 		return "Score: "+this.getScore()+"\nGrade: "+this.getGrade()+"\n";
 	}

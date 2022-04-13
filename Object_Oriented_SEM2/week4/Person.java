@@ -4,13 +4,14 @@ public class Person {
 	private String name, address, phoneNumber, email;
 	
 	Person(){
-		System.out.println("In Person constructor.");
+		//no-args constructor. All of its subclass will run this automatically
 	}
 	
 	Person(String name){
 		this.name = name;
 	}
 	
+	//accessor of private data fields
 	public String getName() {
 		return this.name;
 	}
@@ -27,6 +28,7 @@ public class Person {
 		return this.email;
 	}
 	
+	//setter of private data fields
 	public void setName(String name) {
 		this.name = name;
 	}
