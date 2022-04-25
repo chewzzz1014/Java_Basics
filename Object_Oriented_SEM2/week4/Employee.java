@@ -23,14 +23,11 @@ public class Employee extends Person {
 	public void setEmployeeNum(String employeeNum) {
 		this.employeeNum = employeeNum;
 	}
-	
 	public void setBasicSalary(double basicSalary) {
 		this.basicSalary = basicSalary;
 	}
-	
 	//overriding toString()
 	public String toString() {
 		return this.getName()+"(employee number "+this.getEmployeeNum()+") has a salary of "+this.getBasicSalary();
 	}
-
 }
