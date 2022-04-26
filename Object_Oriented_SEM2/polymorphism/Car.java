@@ -1,6 +1,6 @@
 package polymorphism;
 
-public class Car {
+public class Car {		// generic class
 	private int speed;
 	private String regularPrice, color;
 	
