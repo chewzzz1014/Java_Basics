@@ -7,6 +7,12 @@ public class Sedan extends Car{
 		// no-args constructor
 	}
 	
+	Sedan(int speed, String regularPrice, String color, int year, int mDiscount){
+		super(speed, regularPrice, color);
+		this.year = year;
+		this.manufacturerDiscount = mDiscount;
+	}
+	
 	// getter for private data fields
 	public int getYear() {
 		return this.year;
@@ -23,6 +29,11 @@ public class Sedan extends Car{
 	
 	public void setManufacturerDiscount(int manufacturerDiscount) {
 		this.manufacturerDiscount = manufacturerDiscount;
+	}
+	
+	// overriding toString()
+	public String toString() {
+		return "\tSedan\n"+super.toString()+"\nYear: "+this.getYear()+"\nManufacturer Discount: RM"+this.getManufacturerDiscount();
 	}
 	
 	// overriding method

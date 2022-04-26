@@ -7,6 +7,11 @@ public class Caravan extends Car {
 		// no-args constructor
 	}
 	
+	Caravan(int speed, String regularPrice, String color, int weight){
+		super(speed, regularPrice, color);
+		this.weight = weight;
+	}
+	
 	// getter
 	public int getWeight() {
 		return this.weight;
@@ -15,6 +20,11 @@ public class Caravan extends Car {
 	// setter
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+	
+	// overriding toString()
+	public String toString() {
+		return "\tCaravan\n"+super.toString()+"\nWeight: "+this.getWeight()+"kg";
 	}
 	
 	// overriding method

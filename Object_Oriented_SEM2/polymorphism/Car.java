@@ -8,6 +8,12 @@ public class Car {
 		// no-args argument constructor
 	}
 	
+	Car(int speed, String regularPrice, String color){
+		this.speed = speed;
+		this.regularPrice = regularPrice;
+		this.color = color;
+	}
+	
 	// getter for private data fields
 	public int getSpeed() {
 		return this.speed;
@@ -32,6 +38,11 @@ public class Car {
 	
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	// return the data fields in a string
+	public String toString() {
+		return "Speed: "+this.getSpeed()+" km/h\nRegular Price: RM "+this.getRegularPrice()+"\nColor: "+this.getColor();
 	}
 	
 	// return the sale price in double
