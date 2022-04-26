@@ -8,7 +8,7 @@ public class MVP extends Car{
 	}
 	
 	MVP(int speed, String regularPrice, String color, int length){
-		super(speed, regularPrice, color);
+		super(speed, regularPrice, color); // calls superclass's constructor
 		this.length = length;
 	}
 	

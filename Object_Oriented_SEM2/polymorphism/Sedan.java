@@ -8,7 +8,7 @@ public class Sedan extends Car{
 	}
 	
 	Sedan(int speed, String regularPrice, String color, int year, int mDiscount){
-		super(speed, regularPrice, color);
+		super(speed, regularPrice, color);	// calls superclass's constructor
 		this.year = year;
 		this.manufacturerDiscount = mDiscount;
 	}

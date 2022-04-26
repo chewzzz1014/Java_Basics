@@ -8,7 +8,7 @@ public class Caravan extends Car {
 	}
 	
 	Caravan(int speed, String regularPrice, String color, int weight){
-		super(speed, regularPrice, color);
+		super(speed, regularPrice, color);	// calls superclass's constructor
 		this.weight = weight;
 	}
 	

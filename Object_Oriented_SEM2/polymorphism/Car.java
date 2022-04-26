@@ -8,6 +8,7 @@ public class Car {
 		// no-args argument constructor
 	}
 	
+	// constructor that accepts arguments
 	Car(int speed, String regularPrice, String color){
 		this.speed = speed;
 		this.regularPrice = regularPrice;
@@ -45,7 +46,7 @@ public class Car {
 		return "Speed: "+this.getSpeed()+" km/h\nRegular Price: RM "+this.getRegularPrice()+"\nColor: "+this.getColor();
 	}
 	
-	// return the sale price in double
+	// return the sale price in numerical form for calculation in subclass
 	public double SalePrice() {
 		return Double.parseDouble(this.getRegularPrice());
 	}
