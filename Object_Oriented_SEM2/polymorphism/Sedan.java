@@ -33,7 +33,7 @@ public class Sedan extends Car{
 	
 	// overriding toString()
 	public String toString() {
-		return "\tSedan\n"+super.toString()+"\nYear: "+this.getYear()+"\nManufacturer Discount: RM"+this.getManufacturerDiscount();
+		return "\tSedan\n"+super.toString()+"\nYear: "+this.getYear()+"\nManufacturer Discount: RM "+this.getManufacturerDiscount();
 	}
 	
 	// overriding method
