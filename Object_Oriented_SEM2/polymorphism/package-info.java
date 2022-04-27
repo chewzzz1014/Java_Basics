@@ -9,7 +9,7 @@
  *    	- Sedan
  *    -TestCar
  *    
- * 2.  (refer the UML diagram for details https://cdn.jsdelivr.net/gh/chewzzz1014/file/n1.drawio.png )
+ * 2.  (refer the UML diagram for details https://cdn.jsdelivr.net/gh/chewzzz1014/file@2df934ab53f6bea6705ce71dfa15d044e3b92f0b/n1.drawio.png )
  *   - Shape
  * 	  	- TwoDimensional
  * 			- Circle
