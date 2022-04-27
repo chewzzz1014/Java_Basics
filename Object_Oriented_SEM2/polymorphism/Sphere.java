@@ -1,5 +1,5 @@
 package polymorphism;
 
-public class Sphere {
+public class Sphere extends ThreeDimensional {
 
 }

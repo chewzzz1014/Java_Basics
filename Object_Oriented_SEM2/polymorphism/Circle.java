@@ -1,5 +1,5 @@
 package polymorphism;
 
-public class Circle {
+public class Circle extends TwoDimensional {
 
 }

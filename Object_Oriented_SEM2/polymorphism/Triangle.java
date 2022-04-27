@@ -1,5 +1,5 @@
 package polymorphism;
 
-public class Triangle {
+public class Triangle extends TwoDimensional {
 
 }

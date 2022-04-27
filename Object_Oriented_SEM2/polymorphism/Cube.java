@@ -1,5 +1,5 @@
 package polymorphism;
 
-public class Cube {
+public class Cube extends ThreeDimensional{
 
 }

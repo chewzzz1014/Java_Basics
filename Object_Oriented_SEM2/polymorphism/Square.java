@@ -1,5 +1,5 @@
 package polymorphism;
 
-public class Square {
+public class Square extends TwoDimensional {
 
 }
