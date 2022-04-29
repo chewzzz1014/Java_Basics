@@ -19,15 +19,13 @@ public class Cube extends ThreeDimensional{
 		this.length = length;
 	}
 	
-	public double calArea() {
-		return 6*Math.pow(this.getLength(), 2);
+	public void calArea() {
+		this.setArea(6*Math.pow(this.getLength(), 2));
 	}
 	
-	public double calVolume() {
-		return Math.pow(this.getLength(), 3);
+	public void calVolume() {
+		this.setVolume(Math.pow(this.getLength(), 3));
 	}
 	
-	public String toString() {
-	return "";
-	}
+
 }

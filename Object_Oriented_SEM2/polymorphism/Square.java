@@ -7,6 +7,10 @@ public class Square extends TwoDimensional {
 			
 		}
 		
+		Square(double length){
+			this.length = length;
+		}
+		
 		public double getLength() {
 			return this.length;
 		}
@@ -15,11 +19,8 @@ public class Square extends TwoDimensional {
 			this.length = length;
 		}
 		
-		public double calcArea() {
-			return Math.pow(this.getLength(), 2);
+		public void calcArea() {
+			this.setArea(Math.pow(this.getLength(), 2));
 		}
 		
-		public String toString() {
-			return "";
-		}
 }

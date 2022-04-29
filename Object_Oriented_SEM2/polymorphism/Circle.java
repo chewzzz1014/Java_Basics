@@ -7,6 +7,10 @@ public class Circle extends TwoDimensional {
 		
 	}
 	
+	Circle(double radius){
+		this.setRadius(radius);
+	}
+	
 	public double getRadius() {
 		return this.radius;
 	}
@@ -15,11 +19,8 @@ public class Circle extends TwoDimensional {
 		this.radius = radius;
 	}
 	
-	public double calcArea() {
-		return Math.PI*Math.pow(this.getRadius(), 2);
+	public void calcArea() {
+		this.setArea( Math.PI*Math.pow(this.getRadius(), 2));
 	}
 	
-	public String toString() {
-		return "";
-	}
 }

@@ -7,6 +7,11 @@ public class Triangle extends TwoDimensional {
 		
 	}
 	
+	Triangle(double base, double height){
+		this.setBase(base);
+		this.setHeight(height);
+	}
+	
 	public double getBase() {
 		return this.base;
 	}
@@ -23,11 +28,8 @@ public class Triangle extends TwoDimensional {
 		this.height = height;
 	}
 	
-	public double calcArea() {
-		return 0.5*this.getBase()*this.getHeight();
+	public void calcArea() {
+		this.setArea(0.5*this.getBase()*this.getHeight() );
 	}
-	
-	public String toString() {
-		return "";
-	}
+
 }

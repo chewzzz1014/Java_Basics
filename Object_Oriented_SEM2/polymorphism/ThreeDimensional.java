@@ -21,6 +21,6 @@ public class ThreeDimensional  extends Shape{
 		}
 		
 		public String toString() {
-			return "\nNumber of Dimension: "+getNumDimension();
+			return "\nNumber of Dimension: "+getNumDimension()+"\nArea:"+this.getArea()+" m^2\nVolume: "+this.getVolume()+" m^3";
 		}
 }

@@ -14,4 +14,5 @@ public class TwoDimensional extends Shape {
 		public String toString() {
 			return "\nNumber of Dimensions: "+getNumDimension();
 		}
+		
 }
