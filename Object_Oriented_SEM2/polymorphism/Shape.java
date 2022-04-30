@@ -1,7 +1,7 @@
 package polymorphism;
 
 public class Shape {
-	private String color;
+	private String color = "NA", shapeName;
 	private double area;
 	
 	Shape(){
@@ -10,6 +10,10 @@ public class Shape {
 	
 	public String getColor() {
 		return this.color;
+	}
+	
+	public String getShapeName() {
+		return this.shapeName;
 	}
 	
 	public double getArea() {
@@ -24,7 +28,11 @@ public class Shape {
 		this.area = area;
 	}
 	
+	public void setShapeName(String shapeName) {
+		this.shapeName = shapeName;
+	}
+	
 	public String toString() {
-		return "\n--Instance of Shape--"+"\nColor: "+ this.getColor();
+		return "\n--Instance of Shape--"+"\nShape: "+this.getShapeName()+"\nColor: "+ this.getColor();
 	}
 }

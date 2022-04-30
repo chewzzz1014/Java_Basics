@@ -15,6 +15,7 @@ public class TestShape {
 		shapes.add(new Triangle(3,4));
 		shapes.add(new Square(2.5));
 		
+		shapes.get(0).setColor("Blue");
 		
 		for (Shape sh: shapes) {
 			
@@ -30,9 +31,16 @@ public class TestShape {
 				 ((Sphere)sh).calcArea();
 				 ((Sphere)sh).calcVolume();
 			 }
+			 System.out.println(sh.toString());
 		 }
 		 else if (sh instanceof TwoDimensional){
-			 
+			 if (sh instanceof Circle)
+				 ((Circle)sh).calcArea();
+			 else if (sh instanceof Triangle)
+				 ((Triangle)sh).calcArea();
+			 else if (sh instanceof Square)
+				 ((Square)sh).calcArea();
+			 System.out.println(sh.toString());
 		 }
 			
 		}

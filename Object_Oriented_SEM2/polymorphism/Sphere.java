@@ -4,10 +4,11 @@ public class Sphere extends ThreeDimensional {
 	private double radius;
 	
 	Sphere(){
-		
+		this.setShapeName("Sphere");
 	}
 	
 	Sphere(double radius){
+		this();
 		this.radius = radius;
 	}
 	
@@ -20,11 +21,15 @@ public class Sphere extends ThreeDimensional {
 	}
 	
 	public void calcArea() {
-		this.setArea(4*Math.PI*Math.pow(this.getRadius(),2));
+		this.setArea(Math.round(4*Math.PI*Math.pow(this.getRadius(),2)*100)/100.00);
 	}
 	
 	public void calcVolume() {
-		this.setVolume((4/3)*(Math.PI)*Math.pow(this.getRadius(), 2));
+		this.setVolume(Math.round((4/3.0)*Math.PI*Math.pow(this.getRadius(), 3)*100)/100.0);
+	}
+	
+	public String toString() {
+		return super.toString()+"\nRadius: "+this.getRadius()+" m";
 	}
 	
 }

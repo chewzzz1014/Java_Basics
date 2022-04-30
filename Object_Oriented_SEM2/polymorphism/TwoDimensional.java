@@ -12,7 +12,7 @@ public class TwoDimensional extends Shape {
 		}
 		
 		public String toString() {
-			return "\nNumber of Dimensions: "+getNumDimension();
+			return super.toString()+"\nNumber of Dimensions: "+getNumDimension()+"\nArea: "+this.getArea()+" m^2";
 		}
 		
 }
