@@ -2,9 +2,9 @@ package polymorphism;
 
 public class Caravan extends Car {
 	private int weight;
-	
-	Caravan(){
-		// no-args constructor
+	Caravan()
+	{ // no-args constructor
+
 	}
 	
 	Caravan(int speed, String regularPrice, String color, int weight){

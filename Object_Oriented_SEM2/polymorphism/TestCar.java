@@ -1,6 +1,5 @@
 package polymorphism;
 import java.util.*;
-
 public class TestCar {
 	public static void main(String[]args) {
 		// an ArrayList of type Car
@@ -8,18 +7,14 @@ public class TestCar {
 		
 		// created an object of class Car and store in array list
 		carList.add( new Car(25, "50000","Red") );
-		
 		// created an object which has supertype Car and subtype MVP
 		carList.add( new MVP(50, "45000", "Mint Green", 20) );
-		
 		// created an object which has supertype Car and subtype Sedan
 		carList.add( new Sedan(76, "57000", "Maroon", 2012, 54) );
-		
 		// created an object which has supertype Car and subtype Caravan
 		carList.add(new Caravan(50, "56000", "Yellow", 2000) );
 		
-        printCarDetails(carList);
-	}
+        printCarDetails(carList);}
 	
 	public static void printCarDetails(ArrayList<Car>carList)  
 	{
@@ -33,6 +28,5 @@ public class TestCar {
 			System.out.print("\nSale Price: RM "+car.SalePrice());
 			System.out.println("\n********************************");
 		}
-	}
-	
+	}	
 }
