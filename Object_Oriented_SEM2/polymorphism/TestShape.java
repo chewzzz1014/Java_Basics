@@ -8,22 +8,33 @@ public class TestShape {
 		
 		ArrayList<Shape> shapes = new ArrayList<>();
 		
-		Shape s1 = new Cube(5);
-		shapes.add(s1);
-		/*
+		shapes.add(new Cube(5));
 		shapes.add(new Sphere(2.5));
 		
 		shapes.add(new Circle(3.5));
 		shapes.add(new Triangle(3,4));
 		shapes.add(new Square(2.5));
-		*/
-		shapes.get(0).calcArea();
-		System.out.print(shapes.get(0).toString());
-		/*
-		for (int i=0; i<shapes.size();i++) {
-			shapes.get(i).calcArea();
+		
+		
+		for (Shape sh: shapes) {
+			
+		 if (sh instanceof ThreeDimensional) {
+			 if (sh instanceof Cube)
+			 {
+				 ((Cube)sh).calcArea();
+				 ((Cube)sh).calcVolume();
+			 }
+			 
+			 else if (sh instanceof Sphere)
+			 {
+				 ((Sphere)sh).calcArea();
+				 ((Sphere)sh).calcVolume();
+			 }
+		 }
+		 else if (sh instanceof TwoDimensional){
+			 
+		 }
 			
 		}
-		*/
 	}
 }
