@@ -16,10 +16,10 @@ public class TestShape {
 		shapes.get(0).setColor("Blue");
 		// calculate area (and volume for 3d) for all elements and print their properties
 		for (Shape sh: shapes) {
-			
+		
 		 if (sh instanceof ThreeDimensional) {
 			 if (sh instanceof Cube)
-			 {	// casting objects
+			 {	// casting objects (supertype -> subtype)
 				 ((Cube)sh).calcArea();
 				 ((Cube)sh).calcVolume();
 			 }
