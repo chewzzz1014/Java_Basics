@@ -8,14 +8,14 @@ public class ExceptionHandling {
 		int n1, n2;
 		double div;
 		
-		System.out.print("Enter Number 1: ");
-		n1 = sc.nextInt();
-		
-		System.out.print("\nEnter Number 2: ");
-		n2 = sc.nextInt();
-		System.out.println();
-		
 		try {
+			System.out.print("Enter Number 1: ");
+			n1 = sc.nextInt();
+			
+			System.out.print("\nEnter Number 2: ");
+			n2 = sc.nextInt();
+			System.out.println();
+			
 			div = n1 / n2;
 			divisionLessThan2(div);
 			divisionMoreThan2(div);
@@ -28,7 +28,6 @@ public class ExceptionHandling {
 		}
 		catch(InputMismatchException ex) {
 			 System.out.println("\nInputMismatchException: An integer is required.");
-			 sc.nextLine(); // discard input 
 		}
 		catch(ArithmeticException ex) {
 			System.out.print("\nArithmeticException: Not Allowed to Divide by 0");
