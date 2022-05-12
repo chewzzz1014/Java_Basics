@@ -10,15 +10,15 @@ public class ExceptionHandling {
 		
 		try {
 			System.out.print("Enter Number 1: ");
-			n1 = sc.nextInt();
+			n1 = sc.nextInt();		// InputMismatchException when entered non integer
 			
 			System.out.print("\nEnter Number 2: ");
-			n2 = sc.nextInt();
+			n2 = sc.nextInt();		// InputMismatchException when entered non integer
 			System.out.println();
 			
-			div = n1 / n2;
-			divisionLessThan2(div);
-			divisionMoreThan2(div);
+			div = n1 / n2;		// ArithmeticException when trying to divide by 0
+			divisionLessThan2(div);		// NumberFormatException if div is less than 2
+			divisionMoreThan2(div);		// MoreThanTwoException if div is more than 2
 		}
 		catch(NumberFormatException ex) {
 			System.out.print("\n"+ex);
@@ -32,13 +32,14 @@ public class ExceptionHandling {
 		catch(ArithmeticException ex) {
 			System.out.print("\nArithmeticException: Not Allowed to Divide by 0");
 		}
-		finally {
+		finally {	// will always execute this
 			System.out.print("\nRerun The Program !");
 		}
 		
 		
 	}
 	
+	// throws exception when certain condition satisfies
 	public static void divisionLessThan2 (double div) throws NumberFormatException {
 		if (div <2.0)
 			throw new NumberFormatException(div);

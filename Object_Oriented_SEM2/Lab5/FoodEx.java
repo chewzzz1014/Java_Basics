@@ -62,7 +62,8 @@ public class FoodEx {
 	// checking whether the input is valid or invalid 
 	void checkIsValid () throws IllegalArgumentException {
 		if ( caloriesFromFat > totalCalories )
-			throw new IllegalArgumentException("Somethin wrong with Total Calories or Fat values that you entered.\nCalories From Fat shall not be greater than Total Calories of food."); 
+			throw new IllegalArgumentException("Something wrong with Total Calories or Fat values that you entered."
+					+ "\nCalories From Fat shall not be greater than Total Calories of food."); 
 	}
 	
 	// checking whether the food item is low fat or high fat

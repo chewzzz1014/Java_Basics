@@ -1,14 +1,7 @@
 // week 7
 package Lab5;
 import java.util.*;
-/*
- * 1.	Apply appropriate exception handling for your Fat Gram Calculator that you created in Lab 2 (Question 2). Throw exception such as ArithmeticException, IllegalArgumentException, etc.
- * Food Item	Total Calories	Fat (gram)
-Crunchy Peanut	539.7	32.22 
-Muruku	111.0	7.00
-Food A	211.0	7.00
-Nasi lemak	644.0	83.0
- */
+
 public class FoodCatchException {
 	public static void main (String[]args) {
 		
@@ -23,21 +16,30 @@ public class FoodCatchException {
 			
 		try {
 			System.out.print("\n("+i+")"+"Enter item name: ");
-			item = sc.next();		// InputMismatchException if entered incorrect type
+			item = sc.next();		
+			// InputMismatchException if entered incorrect type
 			
 			System.out.print("\n("+i+")"+"Enter total calories: ");
-			totalCalories = sc.nextDouble();	// InputMismatchException if entered incorrect type
+			totalCalories = sc.nextDouble();	
+			// InputMismatchException if entered incorrect type
 			
 			System.out.print("\n("+i+")"+"Enter fat: ");
-			fat = sc.nextDouble();		// InputMismatchException if entered incorrect type
+			fat = sc.nextDouble();		
+			// InputMismatchException if entered incorrect type
 			
 			FoodEx f = new FoodEx(item, totalCalories, fat);
 			
 			
 			f.calcCaloriesFromFat();
-			f.calcPercentageOfCaloriesFromFat();		// ArithmeticException if totalCalories is 0 (division by 0)
-			f.checkIsValid () ;		// IllegalArgumentException if caloriesFromFat > totalCalories 
+			
+			f.calcPercentageOfCaloriesFromFat();		
+			// ArithmeticException if totalCalories is 0 (division by 0)
+			
+			f.checkIsValid () ;		
+			// IllegalArgumentException if caloriesFromFat > totalCalories
+			
 			foodDetails(f);
+			
 			i++;		// valid item if no exception is raised
 		}
 		
