@@ -4,10 +4,13 @@ import java.io.*;
 
 public class CreateStudentGradeFile {
 	public static void main (String[]args) {
+		
 		Scanner sc = new Scanner (System.in);
+		// create a file with relative path from current directory
 		File inputFile = new File("Object_Oriented_SEM2/file_and_exception/inputFile.txt");
-/////////////////////////////////////////////////
+
 		if (inputFile.exists()) {
+			// if inputFile already existed, ask user they want to delete
 			System.out.print("File \"inputFile.txt\" existed");
 			
 			System.out.print("\nDelete File? (y/n) ");
@@ -21,9 +24,10 @@ public class CreateStudentGradeFile {
 			sc.close();
 			System.exit(0);
 		}
-//////////////////////////////////////////////////
+
 		
 	try {
+		// write into inputFile
 		PrintWriter pw = new PrintWriter(inputFile);
 		pw.println("12345 15 20 15 9 36");
 		pw.println("67890 12 17 10 8 30");
@@ -34,12 +38,14 @@ public class CreateStudentGradeFile {
 		System.out.println(e);
 		System.exit(0);
 	}
-	/////////////////////////////////////////////////	
+		
 	
 	int matric, test, labTest, quiz, project, finalExam, total;
 	try {
+		// sc1 is used to read from inputFile
 		Scanner sc1 = new Scanner(inputFile);
 		File outputFile = new File("Object_Oriented_SEM2/file_and_exception/outputFile.txt");
+		// pw1 is used to write into outputFile
 		PrintWriter pw1 = new PrintWriter(outputFile);
 		
 		while(sc1.hasNext()) {
@@ -49,9 +55,10 @@ public class CreateStudentGradeFile {
 			quiz = sc1.nextInt();
 			project = sc1.nextInt();
 			finalExam = sc1.nextInt();
-			
+			// calculate total score based on what've been read
 			total = test+labTest+quiz+project+finalExam;
 			
+			// print total score and respective score
 			pw1.printf("%1d %1d %1s\n", matric, total, getGrade(total));
 		}	// end of while block
 		
@@ -71,6 +78,7 @@ public class CreateStudentGradeFile {
 
 
 public static String getGrade(int t) {
+	// determine grade based on score
 	String grade = "F";
 	if (t>=80 && t<=100)
 		grade = "A";
