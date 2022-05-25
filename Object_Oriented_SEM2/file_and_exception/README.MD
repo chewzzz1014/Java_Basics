@@ -9,5 +9,5 @@
 2. CreateStudentGradeFile.java
     - inputFile.txt
     - outputFile.txt
-3. ReadFromFile.java and WriteIntoFile.java
-    - friends.csv
+3. WriteFriendList.java
+    - friends.txt
