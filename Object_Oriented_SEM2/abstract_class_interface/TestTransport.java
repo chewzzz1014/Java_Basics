@@ -4,6 +4,7 @@ import java.util.*;
 public class TestTransport {
 	public static void main (String[]args) {
 		
+		// ArrayList that stores objects of Transport
 		ArrayList <Transport> t = new ArrayList<>();
 		t.add(new Van("V212345", 12000, 7));
 		t.add(new Van("V424567", 35000, 10));
@@ -11,7 +12,9 @@ public class TestTransport {
 		t.add(new Lorry("L345632", 75000, 4000));
 		t.add(new Lorry("L230485", 123000, 8000));
 		
+		// print the details of every Transport object
 		for (Transport vl:t) {
+			// select toString() based on dynamic binding
 			System.out.print(vl.toString());
 			
 			char p = '%';

@@ -1,5 +1,6 @@
 package abstract_class_interface;
 
+//weak inherited from RoadTax and strong inheritance with Transport
 public class Van extends Transport implements RoadTax {
 	
 	private int noOfSeat;
@@ -9,6 +10,7 @@ public class Van extends Transport implements RoadTax {
 		this.noOfSeat = noOfSeat;
 	}
 	
+	// getter
 	public int getNoOfSeat() {
 		return this.noOfSeat;
 	}
@@ -17,12 +19,12 @@ public class Van extends Transport implements RoadTax {
 		return "\t\t**Van**\n"+super.toString()+"\nNumber of seats: "+this.getNoOfSeat();
 	}
 	
-	// override from abstract class
+	// override abstract method in Transport
 	public double valueAfterDiscount() {
 		return this.getValue()-(this.getValue()*0.25);
 	}
 	
-	// override from interface
+	// override abstract method in interface RaodTax
 	public double getRoadTaxAmount() {
 		return (this.getValue()/10)+105*this.getNoOfSeat();
 	}
