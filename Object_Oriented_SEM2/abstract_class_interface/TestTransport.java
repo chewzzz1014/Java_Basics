@@ -14,10 +14,8 @@ public class TestTransport {
 		for (Transport vl:t) {
 			System.out.print(vl.toString());
 			
-			if (vl instanceof Van)
-				System.out.printf("Value After 25 Percent Discount: RM %.2f\n", vl.valueAfterDiscount());
-			else if (vl instanceof Lorry)
-				System.out.printf("Value After 25 Percent Discount: RM %.2f\n", vl.valueAfterDiscount());
+			char p = '%';
+			System.out.printf("\nValue After 25%1c Discount: RM %.2f\n\n", p, vl.valueAfterDiscount());
 		}
 		
 	}

@@ -14,7 +14,7 @@ public class Lorry extends Transport implements RoadTax{
 	}
 	
 	public String toString() {
-		return "\t\tLorry\n"+super.toString()+"\nMaximum Weight of Goods: "+this.getWeightOfGoods()+"kg";
+		return "\t\t**Lorry**\n"+super.toString()+"\nMaximum Weight of Goods: "+this.getWeightOfGoods()+"kg";
 	}
 	
 	public double valueAfterDiscount() {
