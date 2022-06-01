@@ -9,7 +9,7 @@ public abstract class Shape {
 	}
 	
 	public String getColor() {
-		return this.getColor();
+		return this.color;
 	}
 	
 	public void setColor(String color) {

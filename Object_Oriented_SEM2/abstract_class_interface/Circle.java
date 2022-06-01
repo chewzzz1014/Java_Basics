@@ -33,11 +33,11 @@ public class Circle extends Shape implements printObject{
 	
 	// override
 	public void printArea() {
-		System.out.printf("Area of Circle: %.2f m^2", this.getArea());
+		System.out.printf("\nArea of Circle: %.2f m^2", this.getArea());
 	}
 	
 	// override
 	public void printPerimeter() {
-		System.out.printf("Perimeter of Circle: %.2f m", this.getPerimeter());
+		System.out.printf("\nPerimeter of Circle: %.2f m", this.getPerimeter());
 	}
 }
