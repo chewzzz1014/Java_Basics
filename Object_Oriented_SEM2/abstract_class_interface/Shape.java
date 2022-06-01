@@ -1,5 +1,6 @@
 package abstract_class_interface;
 
+// an abstract class
 public abstract class Shape {
 
 	private String color;
@@ -16,6 +17,7 @@ public abstract class Shape {
 		this.color = color;
 	}
 	
+	// abstract methods. Their declaration are in Shape's subclasses
 	public abstract double getArea();
 	
 	public abstract double getPerimeter();
