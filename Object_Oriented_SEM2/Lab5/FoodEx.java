@@ -49,7 +49,7 @@ public class FoodEx {
 		return this.caloriesFromFat;
 	}
 	
-	void calcPercentageOfCaloriesFromFat () {
+	void calcPercentageOfCaloriesFromFat() {
 		if (this.getTotalCalories() == 0) throw new ArithmeticException ("Can't divide by 0.");
 		this.percentageOfCaloriesFromFat = ( this.getCaloriesFromFat() / this.getTotalCalories() )*100;
 	}
