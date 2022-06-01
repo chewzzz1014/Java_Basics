@@ -14,7 +14,7 @@ public class Van extends Transport implements RoadTax {
 	}
 	
 	public String toString() {
-		return super.toString()+"\nNumber of seats: "+this.getNoOfSeat();
+		return "\t\tVan\n"+super.toString()+"\nNumber of seats: "+this.getNoOfSeat();
 	}
 	
 	// override from abstract class
