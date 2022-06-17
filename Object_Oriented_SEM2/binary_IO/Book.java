@@ -24,11 +24,11 @@ public class Book implements Serializable {
 	public double getPrice() {
 		return this.price;
 	}
-	
+	// static method. Method can be called by all instances of Book objects
 	public static double getTotal() {
 		return total;
 	}
-	
+	// static method. Method can be called by all instances of Book objects
 	public static void addTotalPriceOfBooks(double price) 	{
 		total += price;
 	}
