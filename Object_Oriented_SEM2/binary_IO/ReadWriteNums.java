@@ -8,7 +8,7 @@ public class ReadWriteNums {
 		DataOutputStream output = new DataOutputStream(new FileOutputStream("Object_Oriented_SEM2/binary_IO/inputNum.dat", true));
 		)
 		{
-			for (int i=0; i<20; i++)
+			for (int i=0; i<150; i++)
 				output.writeInt( (int)(Math.random()*100) );
 			output.close();
 		}	// end of try body block
@@ -18,7 +18,7 @@ public class ReadWriteNums {
 		)
 		{
 			int sum = 0, count = 0;
-			for (int i=0; i<20; i++)
+			for (int i=0; i<150; i++)
 			{
 				sum += input.readInt();
 				count ++ ;

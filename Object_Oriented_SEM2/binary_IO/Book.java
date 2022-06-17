@@ -1,12 +1,12 @@
 package binary_IO;
 import java.io.*;
 
+// make the Book class Serializable so that it can be written to ObjectStream
 public class Book implements Serializable {
 	
-	// By adding 'transient', implement serializable to enable write it to output stream
 	private String title;
-	private transient double price;	
-	private transient static double total;	// static data field is not serialized by default. Need to add keyword 'transient'
+	private double price;	
+	private static double total;	
 	
 	Book(){
 		

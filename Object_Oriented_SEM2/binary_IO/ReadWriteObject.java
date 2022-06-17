@@ -20,6 +20,7 @@ public class ReadWriteObject {
 		
 			try(
 				FileInputStream inputFile = new FileInputStream("Object_Oriented_SEM2/binary_IO/bookObject.dat");
+				// 'input' as wrapper of 'inputFile'
 				ObjectInputStream input = new ObjectInputStream(inputFile);	
 			)
 			{
