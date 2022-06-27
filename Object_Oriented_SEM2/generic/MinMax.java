@@ -1,12 +1,6 @@
 package generic;
 import java.util.*;
-/*
- * 3.	 (Maximum and minimum element in an array) Implement the following methods that returns the maximum and minimum element in an array. Program will request user to input at least 10 integer values as element of the array.
 
-public static <E extends Comparable<E>> E Max(E[] list)
-public static <E extends Comparable<E>> E Min(E[] list)
-
- */
 public class MinMax  {
 	public static void main (String[]args) {
 		
@@ -25,7 +19,8 @@ public class MinMax  {
 					nums[i] = sc.nextInt();
 				}
 				// print the array, max and min in array
-				System.out.printf("\n\nArray: %1s\nMaximum Value in Array: %1d\nMinimum Value in Array: %1d", Arrays.toString(nums), Max(nums), Min(nums));
+				System.out.printf("\n\nArray: %1s\nMaximum Value in Array: %1d\nMinimum Value in Array: %1d", 
+						Arrays.toString(nums), Max(nums), Min(nums));
 				// do user wants to continue the loop?
 				System.out.print("\n\nDo you want to continue? (y/n) ");
 				if ((sc.next().toUpperCase().charAt(0))=='Y')
