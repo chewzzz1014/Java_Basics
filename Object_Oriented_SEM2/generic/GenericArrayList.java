@@ -1,24 +1,30 @@
 package generic;
 import java.util.*;
 
-/*
- * 2.	(Distinct elements in ArrayList) Write the following method that returns a new ArrayList. The new list contains the non-duplicate elements from the original list. Implements the test program.
-
-public static <E> ArrayList<E> removeDuplicates(ArrayList<E> list)
- 
- */
 public class GenericArrayList<E>{
 	
 	public static void main (String[]args) {
-		String[] strArr = {};
+		String[] strArr = {"NO", "NO", "MAYBE", "UNDEFINED","YES", "OBEDIENT", "MAYBE", "YES"};
+		// convert array to generic ArrayList
 		ArrayList<String> str = new ArrayList<>(Arrays.asList(strArr));
+		// display the ori ArrayList and ArrayList after duplicates removal
+		printResult(str);
 	}
 	
+	// generic method that accepts generic ArrayList
+	// removed duplicated elements in ArrayList
 	public static <E> ArrayList<E> removeDuplicates(ArrayList<E> list) {
+		// HashSet only takes unique element. 
+		//Order of elements may change (let's assume that order doesn't matter in this case)
 		Set<E> set = new HashSet<>(list);
 		list.clear();
 		list.addAll(set);
 		return list;
+	}
+	
+	// generic method that accepts generic ArrayList
+	public static <E> void printResult(ArrayList<E>list) {
+		System.out.printf("Original ArrayList: %1s\nArrayList without Duplicated Elements: %1s", list.toString(), (removeDuplicates(list).toString()));
 	}
 	
 }
