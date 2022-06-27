@@ -9,6 +9,12 @@ public class GenericArrayList<E>{
 		ArrayList<String> str = new ArrayList<>(Arrays.asList(strArr));
 		// display the ori ArrayList and ArrayList after duplicates removal
 		printResult(str);
+		
+		// use Integer class instead of primitive type
+		// so that can be accepted by generic method
+		Integer [] intArr = {2, 57, 7, 57, 89, 2, 573, 7};
+		ArrayList<Integer> intNums = new ArrayList<>(Arrays.asList(intArr));
+		printResult(intNums);
 	}
 	
 	// generic method that accepts generic ArrayList
@@ -24,7 +30,6 @@ public class GenericArrayList<E>{
 	
 	// generic method that accepts generic ArrayList
 	public static <E> void printResult(ArrayList<E>list) {
-		System.out.printf("Original ArrayList: %1s\nArrayList without Duplicated Elements: %1s", list.toString(), (removeDuplicates(list).toString()));
+		System.out.printf("Original ArrayList: %1s\nArrayList without Duplicated Elements: %1s\n\n", list.toString(), (removeDuplicates(list).toString()));
 	}
-	
 }
