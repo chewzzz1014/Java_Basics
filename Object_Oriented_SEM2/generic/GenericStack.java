@@ -14,23 +14,28 @@ public class GenericStack <E> extends ArrayList<E> {
 		}
 		
 		public E peek() {
-			return
+			return list.get(this.getSize()-1);
 		}
 		
 		public E pop() {
-			return
+			E last = list.get(-1);
+			last.remove(last);
+			return last;
 		}
 		
 		public void push(E ele) {
-			
+			list.add(ele);
 		}
 		
 		public boolean isEmpty() {
-			return
+			return list.isEmpty();
 		}
 		
 		public String toString() {
-			return 
+			String result="";
+			for (int i=0; i<list.size(); i++) 
+				result += (list.get(i)+", ");
+			return result;
 		}
 }
 
