@@ -19,7 +19,7 @@ public class GenericStack <E> extends ArrayList<E> {
 		
 		public E pop() {
 			E last = list.get(-1);
-			last.remove(last);
+			list.remove(last);
 			return last;
 		}
 		
