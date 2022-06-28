@@ -1,8 +1,7 @@
 package generic;
 import java.util.*;
-/*
- * 	(Implement GenericStack using inheritance) In lecture notes, GenericStack and ArrayList are implemented using composition. Define a new GenericStack class that extends ArrayList. Draw the UML diagram for the classes then implement GenericStack. Write a test program that prompts the user to enter five strings and displays them in reverse order
- */
+
+// GenericStack that accept any type (class)
 public class GenericStack <E> extends ArrayList<E> {
 	private String type;
 	private ArrayList<E> list = new ArrayList<E>();
@@ -11,10 +10,11 @@ public class GenericStack <E> extends ArrayList<E> {
 		GenericStack(){
 			
 		}
+		// to specify the data type (or class) of values it stored
 		GenericStack(String type){
 			this.type = type;
 		}
-		
+		// getter
 		public String getType() {
 			return this.type;
 		}
@@ -22,21 +22,21 @@ public class GenericStack <E> extends ArrayList<E> {
 		public int getSize() {
 			return list.size();
 		}
-		
+		// return the stack
 		public GenericStack<E> getStack(){
 			return this;
 		}
-		
+		// look at the last element
 		public E peek() {
 			return list.get(this.getSize()-1);
 		}
-		
+		// eliminate last element and return it
 		public E pop() {
 			E last = list.get(list.size()-1);
 			list.remove(last);
 			return last;
 		}
-		
+		// add element to the end of stack
 		public void push(E ele) {
 			list.add(ele);
 		}
@@ -44,14 +44,14 @@ public class GenericStack <E> extends ArrayList<E> {
 		public boolean isEmpty() {
 			return list.isEmpty();
 		}
-		
+		// return the String representation of GenericStack
 		public String toString() {
 			String result="";
 			for (int i=0; i<list.size(); i++) 
 				result += (list.get(i)+", ");
 			return result;
 		}
-		
+		// reverse the GenericStack
 		public GenericStack<E>getReverseStack (GenericStack<E> stack){
 		GenericStack<E> rStack = new GenericStack<>();
 		while(!stack.isEmpty())
@@ -61,7 +61,8 @@ public class GenericStack <E> extends ArrayList<E> {
 		
 		// properties of GenericStack
 		public void printProperties() {
-			System.out.printf("******************\nStack Type: %1s\nIs Stack Empty?: %1b\nStack Size: %1d\nStack Content: %1s\nReversed Stack Content: %1s\n\n", this.getType(), this.isEmpty(), this.getSize(), this.toString(), this.getReverseStack(this.getStack()));
+			System.out.printf("******************\n\nStack Type: %1s\nIs Stack Empty?: %1b\nStack Size: %1d\nStack Content: %1s\nReversed Stack Content: %1s\n\n", 
+			this.getType(), this.isEmpty(), this.getSize(), this.toString(), this.getReverseStack(this.getStack()));
 		}
 }
 
