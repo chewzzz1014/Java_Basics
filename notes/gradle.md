@@ -1,7 +1,7 @@
 ## Gradle
 - Gradle is a modern automation tool that helps build and manage projects written in Java, Kotlin, Scala, and other JVM-based languages. It describes project dependencies and determines how to build a project. Gradle uses a well-designed plugin system, that is why it is a highly extendable tool. You can use plugins for automatic versioning, automatic testing, reporting about the build, and so on.
 
-- One of the best things about Gradle is its Groovy-based domain-specific language (DSL) that gives developers a specific way to form custom build scripts. The Kotlin developers are especially lucky since Gradle also started to support Kotlin for such scripts. So, there are two languages to write the Gradle build scripts (Groovy and Kotlin) and you can choose any of them.
+- One of the best things about Gradle is its [Groovy-based](https://en.wikipedia.org/wiki/Apache_Groovy) domain-specific language (DSL) that gives developers a specific way to form custom build scripts. The Kotlin developers are especially lucky since Gradle also started to support Kotlin for such scripts. So, there are two languages to write the Gradle build scripts (Groovy and Kotlin) and you can choose any of them.
 
 - Please, note, that DSL is a computer language specialized to a particular application domain (like build automation). This is in contrast to a general-purpose language (GPL), which is broadly applicable across domains.
 
@@ -17,9 +17,9 @@
   - DSL (based on Groovy and Kotlin) for writing scripts in settings files.
 
 ## Downloading and installing Gradle
-- You can download Gradle from the official website and unpack the archive somewhere on your computer. We recommend choosing version 5.0 or higher.
+- You can download Gradle from the [official website](https://gradle.org/releases/) and unpack the archive somewhere on your computer. We recommend choosing version 5.0 or higher.
 
-- To install Gradle, follow the installation instructions for your operating system.
+- To install Gradle, follow the [installation instructions](https://gradle.org/releases/) for your operating system.
 
 - To verify that the installation has been completed correctly, run the following command:
 ```
