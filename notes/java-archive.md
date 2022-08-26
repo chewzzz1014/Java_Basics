@@ -54,3 +54,10 @@ java -jar app-with-main-class-header.jar
 Hello, Java
 ```
 - Also, you can find some JAR files on the Internet and try running those. At the same time, you can view their internal structure – just replace .jar with .zip and open these files as archives.
+
+## Running jar On Windows 10
+- In this case, I downloaded app1.zip. After unzipped, inside the app1 folder has app1.jar.
+- To run the jar file, I cd into the `app1` directory which stores the app1.jar
+- Enter command:
+![image](https://user-images.githubusercontent.com/92832451/186912899-8c58154c-84dc-4533-a2f1-8af293923757.png)
+
