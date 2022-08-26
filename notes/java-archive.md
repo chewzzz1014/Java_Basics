@@ -56,9 +56,15 @@ Hello, Java
 - Also, you can find some JAR files on the Internet and try running those. At the same time, you can view their internal structure – just replace .jar with .zip and open these files as archives.
 
 ## Running jar On Windows 10
+
+1. jar file w/o main file header
 - In this case, I downloaded app1.zip. After unzipped, inside the app1 folder has app1.jar.
 - To run the jar file, I cd into the `app1` directory which stores the app1.jar
 - Enter command:
 
 ![image](https://user-images.githubusercontent.com/92832451/186912899-8c58154c-84dc-4533-a2f1-8af293923757.png)
+
+2. jar file with main file header (no need to specify path to main)
+
+![image](https://user-images.githubusercontent.com/92832451/186914127-5d62f231-4c1d-4cb3-804f-2dd964410e94.png)
 
