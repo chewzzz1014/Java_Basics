@@ -22,4 +22,14 @@
 - To install Gradle, follow the installation instructions for your operating system.
 
 - To verify that the installation has been completed correctly, run the following command:
+```
+gradle -v
+```
+- The result should look similar to:
+```
+------------------------------------------------------------
+Gradle 5.6.4
+------------------------------------------------------------
+```
 
+- Your version of Gradle may differ; the main thing is that the command should successfully work. If you have errors, try to google them, read the docs, or write us a comment describing your issue.
