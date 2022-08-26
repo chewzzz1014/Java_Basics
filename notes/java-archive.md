@@ -39,12 +39,12 @@ Main-Class: second.Main
 - There are two ways to run a JAR file, depending on whether you want to use Main-Class header in the manifest file or not.
 - if this header is not present or you want to specify the main class manually, run:
 ```
-java -cp app-without-main-class-header.jar path.to.Main
+java -cp <app-without-main-class-header.jar> <path.to.Main>
 ```
 - The last parameter here is the full class name (with packages). The -cp option means classpath i.e. paths to all the JARs which the JRE should scan for bytecode and resources. If you want, you can repeat multiple -cp path-to-Nth.jar pairs of parameters to provide the JRE with multiple different JAR files.
 - if this header is present, then run:
 ```
-java -jar app-with-main-class-header.jar
+java -jar <app-with-main-class-header.jar>
 ```
 - You can try executing both commands locally with these two JAR files (unpack top-level archives):
   - [a demo application without Main-Class header](https://stepik.org/media/attachments/lesson/123928/app1.zip) (path to main is myapp.Main);
@@ -59,5 +59,6 @@ Hello, Java
 - In this case, I downloaded app1.zip. After unzipped, inside the app1 folder has app1.jar.
 - To run the jar file, I cd into the `app1` directory which stores the app1.jar
 - Enter command:
+
 ![image](https://user-images.githubusercontent.com/92832451/186912899-8c58154c-84dc-4533-a2f1-8af293923757.png)
 
