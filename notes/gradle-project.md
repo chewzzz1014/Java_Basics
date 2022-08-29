@@ -91,6 +91,9 @@ task helloGradle {
 }
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187197370-7c7462bd-9b9a-4bfe-a303-76ff2954f0a1.png)
+
+
 - Here, we set the description property and define a simple task that prints a 'hello' message. There is an output after executing the task with the gradle -q helloGradle command:
 ```
 > Task :buildEnvironment
