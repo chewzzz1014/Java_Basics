@@ -29,6 +29,10 @@ BUILD SUCCESSFUL in 10s
 2 actionable tasks: 2 executed
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187195915-bb03fa82-0046-42b8-949a-f57e48224dd8.png)
+
+
+
 Gradle performed some tasks for you and now there is a simple project with the most basic structure:
 
 ```
