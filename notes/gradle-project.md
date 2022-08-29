@@ -142,5 +142,9 @@ Other tasks
 helloGradle
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187198070-d35cbe3a-62c7-45cc-99f7-4d58fca85afc.png)
+
+
+
 - In a real project, the list of tasks will be much larger, because, in addition to standard tasks, it will contain a lot of tasks from various plugins (like Java or Kotlin plugin).
 - We've considered all Gradle-related files from the generated simple project in isolation from any source code files.
