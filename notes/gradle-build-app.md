@@ -154,5 +154,85 @@ repositories {
     jcenter()
 }
 ```
+There are plenty of public repositories: JCenter, Maven Central, Google, and others. Usually, a description of a dependency says which repository contains it.
+
+The dependencies section is used to add external libraries to the project. Gradle will automatically download them from the repositories and put them in the archive with the application. Right now your dependencies section should contain at least a testing library like JUnit or something else, depending on your choice when the project was initialized.
+
+```
+dependencies {
+    // Use JUnit test framework.
+    testImplementation 'junit:junit:4.13'
+
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+```
+We will take a closer look at repositories and dependencies in the next topics.
+
+This is a standard Gradle build structure. You apply some plugins and specify dependencies for your project. This structure will be the same for any project managed by Gradle.
+
+## Configurations for the application plugin
+The auto-generated build.gradle(.kts) file has a section that configures the application plugin thanks to which the application runs with the gradle run command as mentioned above.
+
+```
+application {
+    // Defines the main class for the application
+    mainClassName = "org.hyperskill.gradleapp.App"
+}
+```
+The mainClassName property defines a class with the entry point of the application. It allows us to run the application invoking the gradle run command.
+
+## Generating and running Jar archive
+The classic way to run a JVM-based application is to use the java -jar command. This command can be run without Gradle, you only need to have a JAR beforehand.
+
+So let's build the JAR file for our application:
+
+```
+gradle jar
+
+BUILD SUCCESSFUL in 748ms
+2 actionable tasks: 2 executed
+```
+Now, the JAR file is in the app/build/libs directory.
+
+If you want to clean the project folder from all generated artifacts, just run the gradle clean command.
+
+However, if you now try to run our generated application using the classic approach, there will be a problem:
+
+```
+java -jar app/build/libs/app.jar
+no main manifest attribute, in app/build/libs/app.jar
+```
+The thing is that the application does not contain the Main-Class attribute in the MANIFEST.MF file. So, the JVM does not know the path to the entry point of the application.
+
+To fix this we need to add the required attribute when generating an archive for the application. Just add the following declaration to the build.gradle(.kts) file:
+
+```
+jar {
+    manifest {
+        attributes("Main-Class": "org.hyperskill.gradleapp.App")   // for Groovy DSL
+        attributes("Main-Class" to "org.hyperskill.gradleapp.App") // for Kotlin DSL
+    }
+}
+```
+This code adds the Main-Class attribute to the manifest property of the jar task. See the manifest as a map of properties where we put our pair Main-Class -> Main.
+
+So, now when we execute gradle jar followed by java -jar app/build/libs/app.jar, everything should work as planned and you will see the output line Hello world!. What is good about this way of running applications is that java -jar command can be run without Gradle, you only need to have a JAR beforehand.
+
+## Building the application
+
+If you would like to generate a bundle of the application with all its dependencies and a script to start the application, use the gradle build command.
+
+```
+BUILD SUCCESSFUL in 1s
+7 actionable tasks: 7 executed
+```
+
+If everything is OK, Gradle will have produced the archive in two formats for you: app/build/distributions/app.tar and app/build/distributions/app.zip. Now, you can distribute your application!
+
+
+
+
+
 
 
