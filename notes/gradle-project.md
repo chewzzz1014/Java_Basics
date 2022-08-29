@@ -71,6 +71,10 @@ BUILD SUCCESSFUL in 725ms
 1 actionable task: 1 executed
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187196903-4999800c-4d05-4f66-9d02-77672570796f.png)
+
+
+
 - So, the project was successfully built with one executed task.
 - You can also invoke build and other commands like ./gradlew build for Unix-based systems and gradlew.bat build for Windows. It will automatically download Gradle and run the specified command. Using wrappers allows developers to start working with a Gradle-based project without having to install it manually.
 
