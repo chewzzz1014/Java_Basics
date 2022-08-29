@@ -47,4 +47,34 @@ Enter selection (default: JUnit 4) [1..4]
 Project name (default: demo): org.hyperskill.gradleapp
 Source package (default: org.hyperskill.gradleapp): 
 ```
+After the initialization is completed, the project structure will be the following:
+
+```
+.
+├── app
+│   ├── build.gradle
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── org
+│       │   │       └── hyperskill
+│       │   │           └── gradleapp
+│       │   │               └── App.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── org
+│           │       └── hyperskill
+│           │           └── gradleapp
+│           │               └── AppTest.java
+│           └── resources
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+```
+
 
