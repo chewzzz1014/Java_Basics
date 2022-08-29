@@ -150,5 +150,9 @@ Usually, you don't need to write your program from scratch – you use already w
 
 The repositories section declares locations from which dependencies will be downloaded and added to the project.
 ```
-
+repositories {
+    jcenter()
+}
 ```
+
+
