@@ -204,6 +204,14 @@ gradle jar
 BUILD SUCCESSFUL in 748ms
 2 actionable tasks: 2 executed
 ```
+
+![image](https://user-images.githubusercontent.com/92832451/187205956-9419c00a-5e87-4976-ae26-2ac9a67228d5.png)
+
+
+![image](https://user-images.githubusercontent.com/92832451/187206016-a54ee7f3-98a1-421d-859d-5649a15c2a19.png)
+
+
+
 Now, the JAR file is in the app/build/libs directory.
 
 If you want to clean the project folder from all generated artifacts, just run the gradle clean command.
