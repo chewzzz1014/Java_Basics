@@ -77,6 +77,9 @@ After the initialization is completed, the project structure will be the followi
 └── settings.gradle
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187204230-b2201689-0316-44d0-ba35-e179cab4a166.png)
+
+
 This structure includes a lot of files we have already considered (settings.gradle, wrapper files, etc). The most important file called build.gradle, which contains tasks and external libraries, is located within the app directory. This folder exists because we've chosen application as the type of the project and the folder represents our application.
 
 There is also the src directory inside app. It contains two sub-directories main and test. This is a quite standard project structure when using Gradle. In our case, the package org.hyperskill.gradleapp has some Java source code (App.java).
