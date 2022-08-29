@@ -47,6 +47,10 @@ Gradle performed some tasks for you and now there is a simple project with the m
 └── settings.gradle
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187196245-3f3c022c-7b46-4d2d-a274-22111c19a2c0.png)
+
+
+
 - Here is brief info about all the generated files:
   - The build.gradle file is a primary file that specifies the Gradle's project, including its tasks and external libraries. For now, this file doesn't contain anything useful, but in real projects it is often updated with new information.
   - The files gradle-wrapper.jar, gradle-wrapper.properties, gradlew and gradlew.bat belong to Gradle Wrapper which allows you to run Gradle without its manual installation.
