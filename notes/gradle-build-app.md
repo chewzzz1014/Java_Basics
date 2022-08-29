@@ -189,6 +189,10 @@ application {
 ```
 The mainClassName property defines a class with the entry point of the application. It allows us to run the application invoking the gradle run command.
 
+
+![image](https://user-images.githubusercontent.com/92832451/187205703-cec89085-a828-4650-aa41-d1e9dae12d10.png)
+
+
 ## Generating and running Jar archive
 The classic way to run a JVM-based application is to use the java -jar command. This command can be run without Gradle, you only need to have a JAR beforehand.
 
