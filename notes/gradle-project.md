@@ -110,6 +110,10 @@ Hello, Gradle!
 BUILD SUCCESSFUL in 831ms
 2 actionable tasks: 2 executed
 ```
+
+![image](https://user-images.githubusercontent.com/92832451/187197674-4c9d0832-5312-490c-b420-cc24755bbddc.png)
+
+
 - This build was completed with 2 tasks executed. Our new task printed the Hello, Gradle! message. In addition, we modified the description of the project in the build. The -q argument just simplifies the command output.
 - You can also use Kotlin as DSL inside the build file. To allow it, you need to specify Kotlin as DSL when creating a project. In this case, the name of the file will be build.gradle.kts.
 
