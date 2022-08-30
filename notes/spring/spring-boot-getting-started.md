@@ -41,6 +41,13 @@ When finished, it should print:
 BUILD SUCCESSFUL in 1s
 ```
 
+![image](https://user-images.githubusercontent.com/92832451/187456985-77bb182b-79a9-4ff8-a496-3ee6c1ea51af.png)
+
+
+![image](https://user-images.githubusercontent.com/92832451/187457222-f45fe974-6234-4cd1-a7c6-0b7ffd42e003.png)
+
+
+
 Now, it is time to run the program represented as a .jar file.
 
 ```
@@ -59,6 +66,10 @@ After running, this application just prints the Spring logo and several log line
  :: Spring Boot ::                (v2.4.4)
 ```
 You may also build and start an application using a single line:
+
+![image](https://user-images.githubusercontent.com/92832451/187457615-341cf590-9dea-4502-99b1-2c0a0afe4fb8.png)
+
+
 
 ```
 ./gradlew build && java -jar build/libs/*.jar
