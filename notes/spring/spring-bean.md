@@ -9,7 +9,25 @@
 
 - Before you start using beans, make sure that you have the basic Spring Boot application.
   - Java
+  ```
+  @SpringBootApplication
+public class DemoSpringApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoSpringApplication.class, args);
+    }
+
+}
+  ```
   - Kotlin
+  ```
+  @SpringBootApplication
+class DemoSpringApplication
+
+fun main(args: Array<String>) {
+    runApplication<DemoSpringApplication>(*args)
+}
+  ```
 
 - If you don't have it, you can generate it in your IDE or using this website and then follow the explanation here.
 
@@ -23,7 +41,27 @@
 
 - Here is an example of a simple bean declared in a configuration class:
   - Java
+  ```
+  @Configuration
+public class Addresses {
+
+    @Bean
+    public String address() {
+        return "Green Street, 102";
+    }
+
+}
+  ```
   - Kotlin
+  ```
+  @Configuration
+class Addresses {
+    @Bean
+    fun address(): String {
+        return "Green Street, 102"
+    }
+}
+  ```
 
 - This means that when you start the application, there will be a manageable string bean named address that contains the value "Green Street, 102". Spring automatically invokes the method with the @Bean annotation during the startup in order to initialize all the declared beans.
 
@@ -39,13 +77,65 @@
 
 - In this next example, let's introduce an additional class that represents customers.
   - Java
+  ```
+  class Customer {
+    private final String name;
+    private final String address;
+
+    Customer(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    // getters
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+}
+  ```
   - Kotlin
+  ```
+  data class Customer(val name: String, val address: String)
+  ```
 
 - This class includes the address field which we are going to get from our previous bean to create a new Customer object.
 - Considering that this is only the first topic about beans, for simplicity, all the following methods will be declared in the class annotated with @SpringBootApplication. However, in real-world applications, you will often see bean-annotated methods declared in @Configuration classes.
 - Here is a method that returns an object of this class as a bean. The @Autowired annotation marks the method parameter to be automatically injected.
   - Java
+  ```
+  @SpringBootApplication
+public class DemoSpringApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoSpringApplication.class, args);
+    }
+
+    @Bean
+    public Customer customer(@Autowired String address) {
+        return new Customer("Clara Foster", address);
+    }
+}
+  ```
   - Kotlin
+  ```
+  @SpringBootApplication
+class DemoSpringApplication {
+
+    @Bean
+    fun customer(@Autowired address: String): Customer {
+        return Customer("Clara Foster", address)
+    }
+}
+
+fun main(args: Array<String>) {
+    runApplication<DemoSpringApplication>(*args)
+}
+  ```
 
 - Spring DI injects the address bean into this method and this bean can be used to construct a new object of the Customer class. The injection works because the type of the bean we need is the same as the type of the bean produced earlier, and Spring Container can inject that bean. Even if the argument had another name (e.g. addr), this code would work as expected.
 
@@ -53,7 +143,21 @@
 
 - You may wonder how we can be sure that both of the methods are invoked and the beans are successfully created. There is no need to introduce any new concepts — we can just create the third temporary bean depending on Customer and print the autowired bean. Add it in the same class where you've put the previous bean.
  - Java
+ ```
+ @Bean
+public Customer temporary(@Autowired Customer customer) {
+    System.out.println(customer);
+    return customer;
+}
+ ```
  - Kotlin
+ ```
+ @Bean
+fun temporary(@Autowired customer: Customer): Customer {
+    println(customer)
+    return customer
+}
+ ```
 
 - Now if you run the application, you will see the information about the customer in the log.
 
@@ -70,7 +174,53 @@ Customer{name='Clara Foster', address='Green Street, 102'}
 
 - As we mentioned before, the location of an injection point is determined by the type of bean. But what if we have several beans of the same type and want to use a particular one? Fortunately, there is the @Qualifier annotation that allows us to specify the name of the bean we need to use.
  - Java
+ ```
+ @Bean
+public String address1() {
+    return "Green Street, 102";
+}
+
+@Bean
+public String address2() {
+    return "Apple Street, 15";
+}
+
+@Bean
+public Customer customer(@Qualifier("address2") String address) {
+    return new Customer("Clara Foster", address);
+}
+
+@Bean
+public Customer temporary(@Autowired Customer customer) {
+    // Customer{name='Clara Foster', address='Apple Street, 15'}
+    System.out.println(customer); 
+    return customer;
+}
+ ```
  - Kotlin
+ ```
+ @Bean
+fun address1(): String {
+    return "Green Street, 102"
+}
+
+@Bean
+fun address2(): String {
+    return "Apple Street, 15"
+}
+
+@Bean
+fun customer(@Qualifier("address2") address: String): Customer {
+    return Customer("Clara Foster", address)
+}
+
+@Bean
+fun temporary(@Autowired customer: Customer): Customer {
+    // Customer{name='Clara Foster', address='Apple Street, 15'}
+    println(customer)
+    return customer
+}
+ ```
 
 - In this example, we specify the name of the bean we need to use to build the customer. The last bean named temporary is created only to print the information during the startup of the application.
 
@@ -88,7 +238,15 @@ required a single bean, but 2 were found:
 
 - Now you have a general idea of what Spring beans are and how to use them. But should you always use only beans in Spring and forget about standard objects? The answer is no. You can still use standard objects by creating them manually following the object-oriented programming approach:
  - Java
+ ```
+ String address = "Green Street, 102";
+Customer customer = new Customer("Clara Foster", address);
+ ```
  - Kotlin
+ ```
+val address = "Green Street, 102"
+val customer = Customer("Clara Foster", address)
+ ```
 
 - In real applications, beans are usually used to form a backbone of your app and separate it by layers and configuration files, but most domain objects (like students, accounts, courses, etc.) are standard objects. In this topic, we deliberately used rather synthetic examples to show the logic behind beans without additional complexity. In the following topics, you will encounter a lot of examples where beans are much more convenient than standard objects.
 
