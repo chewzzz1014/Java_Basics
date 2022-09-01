@@ -13,6 +13,9 @@ So, now you know what functional testing is. The next step is to describe differ
 
 The key concept that represents different kinds of tests is the test pyramid. This is a great visual aid that shows different test levels. It also shows the extent of the tests at each level. At the lower levels, there are more tests and they go faster, as they are small and aimed at testing individual functions or features. At the higher level, there are fewer tests, since they are more complex and voluminous, they require more effort and time. Let's look at the pyramid from the bottom up.
 
+![image](https://user-images.githubusercontent.com/92832451/187905778-2b4022f6-b439-4761-92df-2597271e6187.png)
+
+
 ## Unit testing
 
 The most basic type of testing is unit testing. It requires writing tests for every non-trivial function or method. With it, you can quickly check whether the latest change in the code has led to some new errors in the already tested parts of the program; it also facilitates the detection and elimination of such errors. The goal of unit testing is to isolate individual parts of a program and show that each of these parts works.
