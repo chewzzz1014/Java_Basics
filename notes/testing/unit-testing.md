@@ -21,6 +21,9 @@ Note: there is no step called "we thoroughly examine the code".
 
 In unit testing, we know nothing about what the unit actually does with input arguments, but we know exactly what result is expected for each set of input arguments.
 
+![image](https://user-images.githubusercontent.com/92832451/187908211-9d89db2d-4f5c-4700-9e5b-b3bc1d91202c.png)
+
+
 ## Manual Vs Automated
 
 All these steps can be carried out manually or automated. It is in fact very uncommon to opt for manual unit testing, and there are a couple of sound reasons for that. First, testing is a really repetitive process: every time you make a small change in your code, you have to retest it. Doing this manually would be daunting. Second, unit testing can be easily automated, so there is simply no reason to do it manually.
@@ -40,16 +43,16 @@ Finally, unit testing makes the integration process easier. The correctness of t
 Suppose we're developing a calculator that has several basic functions: add, subtract, multiply and divide. The application can be divided into 4 units according to these functions. Let’s try to apply unit testing to the add function which takes two parameters, x and y.
 
 ```
-x = 2
-y = 2
-expected = 4
+   x = 2
+   y = 2
+   expected = 4
 
-output = add(x, y)
+   output = add(x, y)
 
-if expected == output:
-   print("Passed")
-else:
-   print("Failed")
+   if expected == output:
+      print("Passed")
+   else:
+      print("Failed")
 ```
 The pseudocode consists of three parts. First of all, we initialize the test data. Then, we invoke our test subject: the add function. In the end, we compare the actual result with the expected result. If the add function returns 4, your test case passed; otherwise, it failed. Easy as that!
 
