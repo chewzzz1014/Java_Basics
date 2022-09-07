@@ -17,19 +17,26 @@ public class Cinema {
 
         String[][] kino = new String[riadok+1][stlpec+1];
         int option;
+        int currentIncome = 0;
+        int numSeats = riadok*stlpec;
+        int numTicketsPurchased=0;
         boolean to_cont = true;
         
         buildArr(kino);
         
         while (to_cont){
-            System.out.println("1. Show the seats\n2. Buy a ticket\n0. Exit");
+            System.out.println("1. Show the seats\n2. Buy a ticket\n3. Statistics\n0. Exit");
             option = input.nextInt();
             switch(option){
                 case 1:
                     showSeats(kino);
                     break;
                 case 2:
-                    buyTicket(input, kino);
+                    currentIncome = buyTicket(input, kino, riadok, stlpec);
+                    numTicketsPurchased+=1;
+                    break;
+                case 3:
+                    printStats(numTicketsPurchased, currentIncome, riadok, stlpec);
                     break;
                 case 0:
                     to_cont = false;
@@ -40,15 +47,42 @@ public class Cinema {
 
     }
 
-    public static void buyTicket(Scanner input, String[][]kino){
+    public static void printStats(int numTicketsPurchased, int currentIncome, int riadok, int stlpec){
+       int numSeats = (int)(riadok*stlpec/10);
+    	double perc =  numTicketsPurchased / numSeats * 1000;
+        
+        int totalIncome = calculateProfit(riadok, stlpec);
+       System.out.print(numSeats);
+        System.out.printf("Number of purchased tickets: %d\nPercentage: %.2f%c\nCurrent income: $%d\nTotal income: $%d\n",
+                         numTicketsPurchased, perc , '%', currentIncome, totalIncome);
+    }
+
+    public static int buyTicket(Scanner input, String[][]kino, int riadok, int stlpec){
         System.out.println("Enter a row number:");
         int rowNum = input.nextInt();
         System.out.println("Enter a seat number in that row:");
         int colNum = input.nextInt();
+
+        boolean invalid_input =  rowNum>riadok || rowNum<1 || colNum<1 || colNum>stlpec||kino[rowNum][colNum]=="B";
+        while (invalid_input){
+            if (rowNum>riadok || rowNum<1 || colNum<1 || colNum>stlpec)
+                System.out.println("Wrong input!");
+            else
+                System.out.println("That ticket has already been purchased!");
+        
+            
+            System.out.println("Enter a row number:");
+            rowNum = input.nextInt();
+            System.out.println("Enter a seat number in that row:");
+            colNum = input.nextInt();
+
+            invalid_input = rowNum>riadok || rowNum<1 || colNum<1 || colNum>stlpec||kino[rowNum][colNum]=="B";            
+        }
         
         ticketPrice = calcTicketPrice(rowNum, colNum,  riadok,  stlpec);
         System.out.println("Ticket price:$" + ticketPrice);
         kino[rowNum][colNum] = "B";
+        return ticketPrice;
     }
     public static void showSeats(String[][]kino){
         System.out.println("Cinema:");
