@@ -32,7 +32,7 @@ public class Cinema {
                     showSeats(kino);
                     break;
                 case 2:
-                    currentIncome = buyTicket(input, kino, riadok, stlpec);
+                    currentIncome += buyTicket(input, kino, riadok, stlpec);
                     numTicketsPurchased+=1;
                     break;
                 case 3:
@@ -48,11 +48,11 @@ public class Cinema {
     }
 
     public static void printStats(int numTicketsPurchased, int currentIncome, int riadok, int stlpec){
-       int numSeats = (int)(riadok*stlpec/10);
-    	double perc =  numTicketsPurchased / numSeats * 1000;
+       int numSeats = (int)(riadok*stlpec);
+       double perc =  (double)(numTicketsPurchased*100)/(riadok*stlpec);
         
-        int totalIncome = calculateProfit(riadok, stlpec);
-       System.out.print(numSeats);
+       int totalIncome = calculateProfit(riadok, stlpec);
+       System.out.println(numSeats);
         System.out.printf("Number of purchased tickets: %d\nPercentage: %.2f%c\nCurrent income: $%d\nTotal income: $%d\n",
                          numTicketsPurchased, perc , '%', currentIncome, totalIncome);
     }
