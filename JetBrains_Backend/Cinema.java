@@ -16,11 +16,31 @@ public class Cinema {
         stlpec = input.nextInt();
 
         String[][] kino = new String[riadok+1][stlpec+1];
+        int option;
+        boolean to_cont = true;
         
-        System.out.println("Cinema:");
-        fillArray(kino);
-        printArray(kino);
+        buildArr(kino);
+        
+        while (to_cont){
+            System.out.println("1. Show the seats\n2. Buy a ticket\n0. Exit");
+            option = input.nextInt();
+            switch(option){
+                case 1:
+                    showSeats(kino);
+                    break;
+                case 2:
+                    buyTicket(input, kino);
+                    break;
+                case 0:
+                    to_cont = false;
+                    break;
+            }
+        } // end of while block                    
 
+
+    }
+
+    public static void buyTicket(Scanner input, String[][]kino){
         System.out.println("Enter a row number:");
         int rowNum = input.nextInt();
         System.out.println("Enter a seat number in that row:");
@@ -28,13 +48,14 @@ public class Cinema {
         
         ticketPrice = calcTicketPrice(rowNum, colNum,  riadok,  stlpec);
         System.out.println("Ticket price:$" + ticketPrice);
-
         kino[rowNum][colNum] = "B";
+    }
+    public static void showSeats(String[][]kino){
         System.out.println("Cinema:");
-        printArray(kino);                          
-
-        input.close();
-
+        printArray(kino);
+    }
+    public static void buildArr(String[][]kino){
+        fillArray(kino);
     }
 
     public static void fillArray(String[][] kino) {
@@ -122,7 +143,6 @@ public class Cinema {
             }
             return profit;
         }
-        
     }
 
 }
