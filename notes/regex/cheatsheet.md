@@ -145,3 +145,29 @@ textWithoutJohn.matches(johnRegex); // false
 - matches no more than m repetitions of the preceding character.
 
 
+## \d
+- for any digit, short for [0-9]
+
+## \s
+- for whitespace character (including tab and newline), short for [ \t\n\x0B\f\r]
+
+## \w
+- for alphanumeric character (word), short for [a-zA-Z_0-9]
+
+## \b
+- for word boundary.
+- it doesn't match any specific character, it rather matches a boundary between an alphanumeric character and a non-alphanumeric character (for example, a whitespace character) or a boundary of the string (the end or the start of it).
+- `\ba` matches any sequence of alphanumeric characters that starts with "a", `a\b` matches any sequence of alphanumeric characters that ends with "a", and `\ba\b` matches a separate "a" preceded and followed by non-alphanumeric characters.
+
+
+## \D
+- for  non-digit, short for [^0-9];
+
+## \S
+- for non-whitespace character, short for [^ \t\n\x0B\f\r]
+
+## \W
+- for non-alphanumeric character, short for [^a-zA-Z_0-9].
+
+## \B
+- for non-word boundary
