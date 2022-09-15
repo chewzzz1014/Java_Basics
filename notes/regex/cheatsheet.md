@@ -35,7 +35,7 @@ String pattern = ".....\\.";
 ```
 
 
-## [] (Set of characters)
+## [ ] (Set of characters)
 - Matches any sinle character in the [ ]
 
 ```
@@ -93,3 +93,55 @@ String pattern = "yes|no|maybe"; // matches "yes", "no", or "maybe", but not "y"
 String pattern = "(b|r|go)at"; // matches "bat", "rat" or "goat"
 String answer = "The answer is definitely (yes|no|maybe)";
 ```
+
+## +
+- matches one or more repetitions of the preceding character;
+
+```
+String regex = "ca+b";
+
+"cab".matches(regex); // true
+"caaaaab".matches(regex); // true
+"cb".matches(regex); // false because it does not have at least one repetition of 'a'
+```
+
+## *
+- matches zero or more repetitions of the preceding character;
+```
+String regex = "A[0-3]*";
+
+"A".matches(regex);  // true because the pattern matches zero or more repetitions
+"A0".matches(regex); // true
+"A000111222333".matches(regex); // true
+```
+
+```
+// John" located between an undefined number of undefined characters in the text:
+String johnRegex = ".*John.*"; // it matches all strings containing the substring "John"
+
+String textWithJohn = "My friend John is a computer programmer";
+
+textWithJohn.matches(johnRegex); // true
+
+String john = "John";
+
+john.matches(johnRegex); // true
+
+String textWithoutJohn = "My friend is a computer programmer";
+
+textWithoutJohn.matches(johnRegex); // false
+```
+
+## {n}
+- matches exactly n repetitions of the preceding character;
+
+## {n, m}
+- matches at least n but not more than m repetitions of the preceding character;
+
+## {n, }
+- matches at least n repetitions of the preceding character;
+
+## {0, m}
+- matches no more than m repetitions of the preceding character.
+
+
