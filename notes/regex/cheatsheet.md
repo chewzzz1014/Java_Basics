@@ -15,7 +15,7 @@
 
 ## \
 - Escape character for special symbol
-- `\\` in regex means single backslash in matching string
+- `\\` in regex means single backslash in matching string (need \ to escape \, so when using backslash we should use \\)
 
 ```
 String endRegex = "The End\\.";
