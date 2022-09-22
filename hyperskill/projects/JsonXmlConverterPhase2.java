@@ -56,7 +56,6 @@ public class JsonXmlConverterPhase2 {
         Matcher tagNameMatcher = tagNameRegex.matcher(xml);
         if (tagNameMatcher.find()) {
          tagName = tagNameMatcher.group().substring(1);
-         System.out.println(tagName);
         }
         
         Pattern attRegex = Pattern.compile("(\\b\\w+\\b)\\s*=");
@@ -73,8 +72,6 @@ public class JsonXmlConverterPhase2 {
        }
         
        attributes.add(("#"+tagName));
-       System.out.println(attributes);
-       System.out.println(values);
         String value="null";
         
         if ( xml.indexOf("/") < xml.indexOf(">")) {
@@ -154,12 +151,7 @@ public class JsonXmlConverterPhase2 {
         	xml += "/>";
         }
        
-       
-        System.out.println(tagName);
-        System.out.println(attributes);
-        System.out.println(values);
-       // System.out.println(valueBetweenTag);
-        System.out.println((json.contains("null")));
+
         return xml;
     } 
 
