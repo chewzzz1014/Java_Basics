@@ -17,7 +17,6 @@ public class MultipleStage extends Application{
 		stage.setTitle("This is another stage");
 		stage.show();
 		
-		primaryStage.show();
 	}
 	
 	public static void main (String[]args) {
