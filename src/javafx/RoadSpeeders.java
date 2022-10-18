@@ -3,13 +3,14 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.geometry.Pos;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 
 public class RoadSpeeders extends Application{
@@ -28,18 +29,51 @@ public class RoadSpeeders extends Application{
 		carRadio.setToggleGroup(vehicleTypes);
 		bikeRadio.setToggleGroup(vehicleTypes);
 		
-		TextField speed = new TextField();
-		TextField speedLimit = new TextField();
+		TextField speedTF = new TextField();
+		TextField speedLimitTF = new TextField();
 		Button btSubmit = new Button("Submit");
 
 		pane.add(new Label("Vehicle Type"), 0, 0);
 		pane.add(carRadio, 1, 0);
 		pane.add(bikeRadio, 2, 0);
 		pane.add(new Label("Speed Limit (km/h)"), 0, 1);
-		pane.add(speedLimit, 1, 1);
+		pane.add(speedLimitTF, 1, 1);
 		pane.add(new Label("Speed (km/h)"), 0, 2);
-		pane.add(speed, 1, 2);
-		pane.add(btSubmit, 1, 3);
+		pane.add(speedTF, 1, 2);
+		pane.add(btSubmit, 2, 2);
+		
+		pane.add(new Label("Total Fine (RM)"), 0, 3);
+		TextField fineTF = new TextField();
+		pane.add(fineTF, 1, 3);
+		
+		// lambda function
+		btSubmit.setOnAction(e-> {
+			try {
+				RadioButton seletedVehicleRadioButton = (RadioButton) vehicleTypes.getSelectedToggle();
+				String vehicle = seletedVehicleRadioButton.getText();
+				double speed = Double.parseDouble(speedTF.getText());
+				double speedLimit = Double.parseDouble(speedLimitTF.getText());
+				
+				if (vehicle.equals("Car")) {
+					System.out.println(vehicle);
+					Car car = new Car(speed, speedLimit);
+					fineTF.setText( String.format("%.2f", car.getFine()) );
+				} else {
+					Bike bike = new Bike(speed, speedLimit);
+					fineTF.setText( String.format("%.2f", bike.getFine()) );
+				}
+				
+			} catch(Exception err) {
+				BorderPane warnPane = new BorderPane();
+				warnPane.setCenter(new Text("Error!\nCheck your input again.\nMake sure that you have:\n\n - selected all options\n - inputted correct values!"));
+				warnPane.setPrefWidth(50);
+				
+				Scene scene1 = new Scene(warnPane, 250, 250);
+				Stage stage = new Stage();
+				stage.setScene(scene1);
+				stage.show();
+			}
+		});
 		
 		Scene scene = new Scene(pane);
 		primaryStage.setScene(scene);

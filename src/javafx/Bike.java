@@ -7,6 +7,7 @@ public class Bike {
 	public Bike(double car_speed, double speed_limit) {
 		this.car_speed = car_speed;
 		this.speed_limit = speed_limit;
+		this.calcFine();
 	}
 	
 	public double getCarSpeed() {
