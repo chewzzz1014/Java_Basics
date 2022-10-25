@@ -58,7 +58,8 @@ public class RoadSpeeders extends Application{
 				double speed = Double.parseDouble(speedTF.getText());
 				double speedLimit = Double.parseDouble(speedLimitTF.getText());
 				
-				if (vehicle.equals("Car")) {
+				//if (vehicle.equals("Car")) {
+				if (seletedVehicleRadioButton == carRadio) {
 					Car car = new Car(speed, speedLimit);
 					fineTF.setText( String.format("%.2f", car.getFine()) );
 				} else {
