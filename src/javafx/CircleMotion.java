@@ -10,16 +10,18 @@ import java.lang.*;
 public class CircleMotion extends Application{
 	public void start(Stage primaryStage) {
 		
+		int sceneWidth = 280, sceneHeight = 200;
+		
 		Circle circle = new Circle();
-		circle.setCenterX(randomCoorX());
-		circle.setCenterY(randomCoorY());
+		circle.setCenterX(randomCoorX(sceneWidth));
+		circle.setCenterY(randomCoorY(sceneHeight));
 		circle.setRadius(10);
 		circle.setFill(Color.rgb(random255(), random255(), random255()));
 		
 		Pane pane = new Pane();
 		pane.getChildren().add(circle);
 		
-		Scene scene = new Scene(pane, 280, 200);
+		Scene scene = new Scene(pane, sceneWidth, sceneHeight);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Circle Motion");
 		primaryStage.show();
@@ -32,14 +34,16 @@ public class CircleMotion extends Application{
 		return (int)Math.floor(Math.random()*256);
 	}
 	
-	public static int randomCoorX() {
-		// center be be positioned between (inclusively) 10 and 270
+	public static int randomCoorX(int sceneWidth) {
+		// center can be positioned between (inclusively) 10 and 270
 		// formula: floor(random() * (max-min)) + min
-		return (int)Math.floor(Math.random()*261) + 10;
+		int min = 10, max = sceneWidth-10;
+		return (int)Math.floor(Math.random()*(max-min+1)) + min;
 	}
 	
-	public static int randomCoorY() {
-		// center be be positioned between (inclusively) 10 and 180
-		return (int)Math.floor(Math.random()*171) + 10;
+	public static int randomCoorY(int sceneHeight) {
+		// center can be positioned between (inclusively) 10 and 180
+		int min = 10, max = sceneHeight-10;
+		return (int)Math.floor(Math.random()*(max-min+1)) + min;
 	}
 }
