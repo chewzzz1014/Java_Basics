@@ -15,7 +15,7 @@ import javafx.geometry.Insets;
 public class CircleMotion extends Application{
 		// to be read and modified by inner class (mouse event handler)
 		private int sceneWidth = 280, sceneHeight = 200;
-		private int count = 0;
+		private int count = 1;
 		private Date start, end;
 		private long diff;
 		private Circle circle = new Circle();
@@ -77,14 +77,14 @@ public class CircleMotion extends Application{
 	class CircleHandler implements EventHandler<MouseEvent>{
 		public void handle(MouseEvent e) {
 			// keep changing the coordinates and colour of circle
-			if (count < 2) {
+			if (count < 20) {
 				circle.setCenterX(randomCoorX(sceneWidth));
 				circle.setCenterY(randomCoorY(sceneHeight));
 				//circle.setRadius(10);
 				circle.setFill(Color.rgb(random255(), random255(), random255()));
 				count ++;
 				System.out.println(count);
-			}else if (count==2) {
+			}else if (count==20) {
 				// count the time difference between start time and end time (after 20 circles clicked)
 				// show the time spent on a new window
 				end = new Date();
