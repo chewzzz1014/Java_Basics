@@ -10,6 +10,7 @@ import javafx.event.*;
 import javafx.scene.input.MouseEvent;
 import java.util.Date;
 import javafx.scene.text.Text;
+import javafx.geometry.Insets;
 
 public class CircleMotion extends Application{
 		// to be read and modified by inner class (mouse event handler)
@@ -18,10 +19,11 @@ public class CircleMotion extends Application{
 		private Date start, end;
 		private long diff;
 		private Circle circle = new Circle();
+		private Stage primaryStage;
+		private Scene scene;
+		private Pane pane;
 		
 	public void start(Stage primaryStage) {
-		// start to count the time when the moment program is ran
-		start = new Date();
 		// set radius, center coordinates and color of circle. Coordinates and color are random
 		circle.setCenterX(randomCoorX(sceneWidth));
 		circle.setCenterY(randomCoorY(sceneHeight));
@@ -32,14 +34,17 @@ public class CircleMotion extends Application{
 		circle.setOnMouseClicked(new CircleHandler());
 		
 		// add circle to pane
-		Pane pane = new Pane();
+		pane = new Pane();
 		pane.getChildren().add(circle);
 		
 		// set up scene and show scene
-		Scene scene = new Scene(pane, sceneWidth, sceneHeight);
+		scene = new Scene(pane, sceneWidth, sceneHeight);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Circle Motion");
 		primaryStage.show();
+		
+		// start to count the time when the moment program is ran
+		start = new Date();
 	}
 	public static void main(String[]args) {
 		launch(args);
@@ -71,32 +76,34 @@ public class CircleMotion extends Application{
 	// inner class: event handler for clicking on circle
 	class CircleHandler implements EventHandler<MouseEvent>{
 		public void handle(MouseEvent e) {
-			
 			// keep changing the coordinates and colour of circle
-			if (count < 20) {
+			if (count < 2) {
 				circle.setCenterX(randomCoorX(sceneWidth));
 				circle.setCenterY(randomCoorY(sceneHeight));
-				circle.setRadius(10);
+				//circle.setRadius(10);
 				circle.setFill(Color.rgb(random255(), random255(), random255()));
 				count ++;
-			}else if (count==20) {
-				
+				System.out.println(count);
+			}else if (count==2) {
 				// count the time difference between start time and end time (after 20 circles clicked)
 				// show the time spent on a new window
 				end = new Date();
 				diff = end.getTime() - start.getTime();
 				String output = "Time spent is " + diff + " milliseconds";
-				BorderPane pane = new BorderPane();
-				pane.setCenter(new Text(output));
 				
-				Scene scene = new Scene(pane, sceneWidth, sceneHeight);
-				Stage stage = new Stage();
-				stage.setScene(scene);
-				stage.setTitle("Result");
-				stage.show();
-			}
-		}
-		
+				BorderPane endPane = new BorderPane();
+				endPane.setCenter(new Text(output));
+				
+				//scene = new Scene(endPane);
+				
+				//Scene scene = new Scene(pane, sceneWidth, sceneHeight);
+				//Stage stage = new Stage();
+				
+				pane.getChildren().remove(circle);
+				pane.setPadding(new Insets(20, 20, 20, 20));
+				pane.getChildren().add(endPane);
+		}	
+	}
 	}
 	
 }
