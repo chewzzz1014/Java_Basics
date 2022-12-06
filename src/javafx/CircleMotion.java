@@ -19,7 +19,6 @@ public class CircleMotion extends Application{
 		private Date start, end;
 		private long diff;
 		private Circle circle = new Circle();
-		private Stage primaryStage;
 		private Scene scene;
 		private Pane pane;
 		
