@@ -1,4 +1,4 @@
-
+// Chew Zi Qing 212360
 import java.io.*;
 import java.net.*;
 import java.util.Date;
@@ -9,10 +9,10 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
+// Server that calculates BMI based on height and weight given by client
 public class Server extends Application {
-  @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
-    // Text area for displaying contents
+    // Text area for logging
     TextArea ta = new TextArea();
 
     // Create a scene and place it in the stage
@@ -23,8 +23,10 @@ public class Server extends Application {
     
     new Thread( () -> {
       try {
-        // Create a server socket
+        // Create a server socket and launch server
         ServerSocket serverSocket = new ServerSocket(8000);
+        
+        // logging message after started server
         Platform.runLater(() ->
           ta.appendText("Server started at " + new Date() + '\n'));
   
@@ -37,17 +39,19 @@ public class Server extends Application {
         DataOutputStream outputToClient = new DataOutputStream(
           socket.getOutputStream());
   
+        // constantly listening for client's request
         while (true) {
-          // Receive radius from the client
+          // get height and weight from the client
           double height = inputFromClient.readDouble();
           double weight = inputFromClient.readDouble();
   
-          // Compute area
+          // calculate BMI
           double bmi = weight/(height*height);
   
-          // Send area back to the client
+          // send BMI back to the client
           outputToClient.writeDouble(bmi);
   
+          // update log
           Platform.runLater(() -> {
             ta.appendText("Height received from client: " 
               + height + "m\n"+"Weight received from client: "+weight+"kg \n");
@@ -60,11 +64,6 @@ public class Server extends Application {
       }
     }).start();
   }
-
-  /**
-   * The main method is only needed for the IDE with limited
-   * JavaFX support. Not needed for running from the command line.
-   */
   public static void main(String[] args) {
     launch(args);
   }
