@@ -83,7 +83,8 @@ public class Client extends Application {
         
         // display the error warning window
         BorderPane errPane = new BorderPane();
-        errPane.setCenter(new Label("Make sure:\n- Provide both height and weight!\n- Height and weight are number!"));
+        errPane.setCenter(new Label("Make sure:\n- Provide both height "
+        		+ "and weight!\n- Height and weight are number!"));
         Scene errScene = new Scene(errPane, 300, 150);
         Stage errorStage = new Stage();
         errorStage.setTitle("Error!");
