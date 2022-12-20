@@ -14,7 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Client extends Application {
+public class BMIClient extends Application {
   // for sending data to and receive data from server
   DataOutputStream toServer = null;
   DataInputStream fromServer = null;

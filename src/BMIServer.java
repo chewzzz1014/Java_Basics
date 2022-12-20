@@ -10,7 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 // Server that calculates BMI based on height and weight given by client
-public class Server extends Application {
+public class BMIServer extends Application {
   public void start(Stage primaryStage) {
     // Text area for logging
     TextArea ta = new TextArea();
