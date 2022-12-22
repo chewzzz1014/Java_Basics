@@ -1,3 +1,4 @@
+// Chew Zi Qing 212360
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,7 +9,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
 
 // send radius to server and get area back
 public class RMIClient extends Application {
@@ -35,7 +35,6 @@ public class RMIClient extends Application {
 	    primaryStage.setScene(scene);
 	    primaryStage.show();
 	    
-	    // get remote object Registry for the local host
 	    initializeRMI();
 	    // set event listener. Will send radius to server when clicked
 	    btGetArea.setOnAction(e -> getScore());
@@ -50,6 +49,7 @@ public class RMIClient extends Application {
 	    catch(Exception ex) {
 	      ex.printStackTrace();
 	      
+	      // showing error alert window
 	      BorderPane errPane = new BorderPane();
 	        errPane.setCenter(new Label("Radius is required!\nPlease Enter Valid Number!"));
 	        Scene errScene = new Scene(errPane, 300, 150);
@@ -65,7 +65,7 @@ public class RMIClient extends Application {
 	    String host = "";
 
 	    try {
-	    	// get remote object Registry for the local host
+	      // get remote object Registry for the local host
 	      Registry registry = LocateRegistry.getRegistry(host);
 	      // find the remote object with the given name
 	      circle = (RMIServerInterface)
