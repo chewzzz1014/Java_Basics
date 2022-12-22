@@ -28,7 +28,7 @@ public class RMIClient extends Application {
 
 	    // Create a scene and place the pane in the stage
 	    Scene scene = new Scene(gridPane, 250, 250);
-	    primaryStage.setTitle("StudentServerInterfaceClient"); 
+	    primaryStage.setTitle("Client"); 
 	    primaryStage.setScene(scene); // Place the scene in the stage
 	    primaryStage.show(); // Display the stage
 	    
