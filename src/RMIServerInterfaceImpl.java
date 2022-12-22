@@ -2,6 +2,7 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.util.*;
 
+// RMI Server
 public class RMIServerInterfaceImpl extends UnicastRemoteObject implements RMIServerInterface {
 	
 	public RMIServerInterfaceImpl() throws RemoteException{
@@ -11,6 +12,8 @@ public class RMIServerInterfaceImpl extends UnicastRemoteObject implements RMISe
 	protected void initializeStudent() {
 	}
 	
+	// method that actually calculates the area of circle
+	// radius is from client
 	public double calcArea(String radius) throws RemoteException{
 		Double r = Double.parseDouble(radius); 
 		double area = r * r * Math.PI;
