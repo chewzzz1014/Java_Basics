@@ -4,6 +4,7 @@ import java.rmi.registry.*;
 public class RegisterWithRMIServer {
 	public static void main(String[]args) {
 		try {
+			// create remote
 			RMIServerInterface obj = new RMIServerInterfaceImpl();
 			
 			// get remote object Registry for local host

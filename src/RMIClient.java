@@ -1,18 +1,21 @@
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+
+// send radius to server and get area back
 public class RMIClient extends Application {
-	
+	// server
 	private RMIServerInterface circle;
 
+	 // make UI with javafx
 	  private Button btGetArea = new Button("Get Area");
 	  private TextField tfRadius = new TextField();
 	  private TextField tfArea = new TextField();
@@ -26,24 +29,34 @@ public class RMIClient extends Application {
 	    gridPane.add(tfArea, 1, 1);
 	    gridPane.add(btGetArea, 1, 2);
 
-	    // Create a scene and place the pane in the stage
+	    // showing windows
 	    Scene scene = new Scene(gridPane, 250, 250);
 	    primaryStage.setTitle("Client"); 
-	    primaryStage.setScene(scene); // Place the scene in the stage
-	    primaryStage.show(); // Display the stage
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
 	    
+	    // get remote object Registry for the local host
 	    initializeRMI();
+	    // set event listener. Will send radius to server when clicked
 	    btGetArea.setOnAction(e -> getScore());
 	  }
 
+	  // get score from input field
 	  private void getScore() {
 	    try {
-	      
-	      double area = student.calcArea(tfRadius.getText().trim());
+	      double area = circle.calcArea(tfRadius.getText().trim());
 	      tfArea.setText(area+"");
 	    }
 	    catch(Exception ex) {
 	      ex.printStackTrace();
+	      
+	      BorderPane errPane = new BorderPane();
+	        errPane.setCenter(new Label("Radius is required!\nPlease Enter Valid Number!"));
+	        Scene errScene = new Scene(errPane, 300, 150);
+	        Stage errorStage = new Stage();
+	        errorStage.setTitle("Error!");
+	        errorStage.setScene(errScene);
+	        errorStage.show();
 	    }
 	  }
 
@@ -54,7 +67,7 @@ public class RMIClient extends Application {
 	    try {
 	    	// get remote object Registry for the local host
 	      Registry registry = LocateRegistry.getRegistry(host);
-	      // find the remote object the the given name
+	      // find the remote object with the given name
 	      circle = (RMIServerInterface)
 	        registry.lookup("RMIServerInterfaceImpl");
 	      System.out.println("Server object " + circle + " found");

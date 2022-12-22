@@ -6,10 +6,7 @@ import java.util.*;
 public class RMIServerInterfaceImpl extends UnicastRemoteObject implements RMIServerInterface {
 	
 	public RMIServerInterfaceImpl() throws RemoteException{
-		initializeStudent();
-	}
-	
-	protected void initializeStudent() {
+		
 	}
 	
 	// method that actually calculates the area of circle
