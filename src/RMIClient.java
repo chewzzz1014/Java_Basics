@@ -11,7 +11,7 @@ import java.rmi.registry.Registry;
 
 public class RMIClient extends Application {
 	
-	private RMIServerInterface student;
+	private RMIServerInterface circle;
 
 	  private Button btGetArea = new Button("Get Area");
 	  private TextField tfRadius = new TextField();
@@ -38,7 +38,7 @@ public class RMIClient extends Application {
 
 	  private void getScore() {
 	    try {
-	      // Get student score
+	      
 	      double area = student.calcArea(tfRadius.getText().trim());
 	      tfArea.setText(area+"");
 	    }
@@ -47,25 +47,22 @@ public class RMIClient extends Application {
 	    }
 	  }
 
-	  /** Initialize RMI */
+	  // start the RMI
 	  protected void initializeRMI() {
 	    String host = "";
 
 	    try {
+	    	// get remote object Registry for the local host
 	      Registry registry = LocateRegistry.getRegistry(host);
-	      student = (RMIServerInterface)
+	      // find the remote object the the given name
+	      circle = (RMIServerInterface)
 	        registry.lookup("RMIServerInterfaceImpl");
-	      System.out.println("Server object " + student + " found");
+	      System.out.println("Server object " + circle + " found");
 	    }
 	    catch(Exception ex) {
 	      System.out.println(ex);
 	    }
 	  }
-
-	  /**
-	   * The main method is only needed for the IDE with limited
-	   * JavaFX support. Not needed for running from the command line.
-	   */
 	  public static void main(String[] args) {
 	    launch(args);
 	  }

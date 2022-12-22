@@ -6,8 +6,9 @@ public class RegisterWithRMIServer {
 		try {
 			RMIServerInterface obj = new RMIServerInterfaceImpl();
 			
-			// register
+			// get remote object Registry for local host
 			Registry registry = LocateRegistry.getRegistry();
+			// bind this name with the remote object
 			registry.rebind("RMIServerInterfaceImpl", obj);
 			System.out.println("Student server " + obj + " registered");
 		}catch(Exception e) {

@@ -2,7 +2,7 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.util.*;
 
-// RMI Server
+// the actual implementation of RMI Server with remote method
 public class RMIServerInterfaceImpl extends UnicastRemoteObject implements RMIServerInterface {
 	
 	public RMIServerInterfaceImpl() throws RemoteException{
