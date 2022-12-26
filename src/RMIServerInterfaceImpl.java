@@ -1,7 +1,6 @@
 // Chew Zi Qing 212360
 import java.rmi.*;
 import java.rmi.server.*;
-import java.util.*;
 
 // the actual implementation of RMI Server with remote method
 public class RMIServerInterfaceImpl extends UnicastRemoteObject implements RMIServerInterface {
