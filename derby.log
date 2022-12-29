@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Thu Dec 29 08:46:57 MYT 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0185-5b58-afea-0000051bef70, [2] C:\Users\USER\eclipse-workspace\Database\javabook, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@58372a00, [4] file:/C:/Users/USER/Downloads/db-derby-10.15.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.2+8-86
+user.dir=C:\Users\USER\eclipse-workspace\Database
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+C005 : [0] 
