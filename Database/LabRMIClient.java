@@ -38,13 +38,9 @@ public class LabRMIClient extends Application {
   private void getScore() {
     try {
       // Get student score
-      double score = student.findScore(tfName.getText().trim());
+      String score = student.findScore(tfName.getText().trim());
 
-      // Display the result
-      if (score < 0)
-        tfScore.setText("Not found");
-      else
-        tfScore.setText(new Double(score).toString());
+      tfScore.setText(score);
     }
     catch(Exception ex) {
       ex.printStackTrace();
