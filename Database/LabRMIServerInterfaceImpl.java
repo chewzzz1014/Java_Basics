@@ -6,11 +6,11 @@ import java.sql.*;
 // the actual implementation of RMI Server with remote method
 public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements LabRMIServerInterface {
 	
-	Statement preparedStatement;
+	Statement statement;
 	Connection connection;
 	
 	public LabRMIServerInterfaceImpl() throws RemoteException{
-		//initializeDB();
+		initializeDB();
 	}
 	
 	private void initializeDB() {
@@ -23,24 +23,24 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 		    		  ("jdbc:derby:javabook;user=scott;password=tiger");
 		        
 		      System.out.println("Database connected");
-		      preparedStatement = connection.createStatement();
+		      statement = connection.createStatement();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public String findScore(String name)throws RemoteException {
-		initializeDB();
+		//initializeDB();
 		ResultSet rset;
 		String result = "Not Found";
 		
 		try {
-			String queryStr = "select * from Scores";
+			String queryStr = "select * from Course";
 			//preparedStatement = connection.prepareStatement(queryStr);
 //			 preparedStatement.setString(1, name);
 //		     preparedStatement.setString(2, courseId);
-			 rset = preparedStatement.executeQuery(queryStr);
-			 result = rset.getString(0);
+			 rset = statement.executeQuery(queryStr);
+			 result = rset.getString(1);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
