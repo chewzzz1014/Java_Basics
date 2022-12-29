@@ -1,18 +1,16 @@
 // Chew Zi Qing 212360
 import java.rmi.*;
 import java.rmi.server.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.*;
 
 // the actual implementation of RMI Server with remote method
 public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements LabRMIServerInterface {
 	
-	PreparedStatement preparedStatement;
+	Statement preparedStatement;
 	Connection connection;
 	
 	public LabRMIServerInterfaceImpl() throws RemoteException{
-		initializeDB();
+		//initializeDB();
 	}
 	
 	private void initializeDB() {
@@ -25,23 +23,28 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 		    		  ("jdbc:derby:javabook;user=scott;password=tiger");
 		        
 		      System.out.println("Database connected");
+		      preparedStatement = connection.createStatement();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public String findScore(String name)throws RemoteException {
+		initializeDB();
+		ResultSet rset;
+		String result = "Not Found";
+		
 		try {
 			String queryStr = "select * from Scores";
-			preparedStatement = connection.prepareStatement(queryStr);
-			 preparedStatement.setString(1, name);
+			//preparedStatement = connection.prepareStatement(queryStr);
+//			 preparedStatement.setString(1, name);
 //		     preparedStatement.setString(2, courseId);
-		     ResultSet rset = preparedStatement.executeQuery();
-		     return rset.getString(1);
+			 rset = preparedStatement.executeQuery(queryStr);
+			 result = rset.getString(0);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "yoyoy";
+		return result;
 	  }
 	
 }

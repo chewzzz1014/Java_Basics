@@ -12,7 +12,7 @@ public class LabRegisterWithRMIServer {
 			Registry registry = LocateRegistry.getRegistry();
 			
 			// bind this name with the remote object
-			registry.rebind("RMIServerInterfaceImpl", obj);
+			registry.rebind("LabRMIServerInterfaceImpl", obj);
 			System.out.println("Student server " + obj + " registered");
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -54,7 +54,7 @@ public class LabRMIClient extends Application {
     try {
       Registry registry = LocateRegistry.getRegistry(host);
       student = (LabRMIServerInterface)
-        registry.lookup("StudentServerInterfaceImpl");
+        registry.lookup("LabRMIServerInterfaceImpl");
       System.out.println("Server object " + student + " found");
     }
     catch(Exception ex) {
