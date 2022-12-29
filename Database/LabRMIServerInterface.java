@@ -3,7 +3,6 @@ import java.rmi.*;
 
 // interface for Server class
 public interface LabRMIServerInterface extends Remote {
-	// abstract method of calculating circle radius
-	public double calcArea(String radius) throws RemoteException;
+	public double findScore(String name) throws RemoteException;
 }
 

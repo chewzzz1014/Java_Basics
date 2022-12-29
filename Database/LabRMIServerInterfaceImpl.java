@@ -9,13 +9,18 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 		
 	}
 	
-	// method that actually calculates the area of circle
-	// radius is from client
-	public double calcArea(String radius) throws RemoteException{
-		Double r = Double.parseDouble(radius); 
-		double area = r * r * Math.PI;
-		System.out.println("Area is " + area);
-		return area;
-	}
+	public double findScore(String name) throws RemoteException {
+	    Double d = (Double)scores.get(name);
+
+	    if (d == null) {
+	      System.out.println("Student " + name + " is not found ");
+	      return -1;
+	    }
+	    else {
+	      System.out.println("Student " + name + "\'s score is "
+	        + d.doubleValue());
+	      return d.doubleValue();
+	    }
+	  }
 	
 }
