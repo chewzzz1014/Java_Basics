@@ -8,6 +8,8 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	
 	Statement statement;
 	Connection connection;
+	ResultSet rset;
+	String result = "Not Found";
 	
 	public LabRMIServerInterfaceImpl() throws RemoteException{
 		initializeDB();
@@ -15,7 +17,9 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	
 	private void initializeDB() {
 		try {
-			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
+			//Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 		      System.out.println("Driver loaded");
 
 		      // Establish a connection
@@ -24,23 +28,26 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 		        
 		      System.out.println("Database connected");
 		      statement = connection.createStatement();
+		      
+		      String queryStr = "select * from Scores";
+		      rset = statement.executeQuery(queryStr);
+			  result = rset.getString(1);
+		      System.out.println(result);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public String findScore(String name)throws RemoteException {
-		//initializeDB();
-		ResultSet rset;
-		String result = "Not Found";
-		
+		initializeDB();	
 		try {
-			String queryStr = "select * from Course";
+			String queryStr = "select * from Scores";
 			//preparedStatement = connection.prepareStatement(queryStr);
 //			 preparedStatement.setString(1, name);
 //		     preparedStatement.setString(2, courseId);
-			 rset = statement.executeQuery(queryStr);
+			 rset = this.statement.executeQuery(queryStr);
 			 result = rset.getString(1);
+			 System.out.println(result);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
