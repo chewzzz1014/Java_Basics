@@ -41,21 +41,11 @@ public class FindGrade extends Application {
 
   private void initializeDB() {
     try {
-      // Load the JDBC driver
-    //  Class.forName("com.mysql.jdbc.Driver");
-     // Class.forName("oracle.jdbc.driver.OracleDriver");
     Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
       System.out.println("Driver loaded");
-
-      // Establish a connection
       Connection connection = DriverManager.getConnection
     		  ("jdbc:derby:javabook;user=scott;password=tiger");
-        //("jdbc:mysql://localhost/javabook", "scott", "tiger");
-   // ("jdbc:oracle:thin:@liang.armstrong.edu:1521:orcl", "scott", "tiger");
-    		  
       System.out.println("Database connected");
-
-      // Create a statement
       stmt = connection.createStatement();
     }
     catch (Exception ex) {
@@ -82,11 +72,13 @@ public class FindGrade extends Application {
         String firstName = rset.getString(3);
         String title = rset.getString(4);
         String grade = rset.getString(5);
+//    	  String name = rset.getString(1);
+//    	  double score = rset.getDouble(2);
+//    	  boolean permission = rset.getBoolean(3);
 
         // Display result in a label
-        lblStatus.setText(firstName + " " + mi +
-          " " + lastName + "'s grade on course " + title + " is " +
-          grade);
+        lblStatus.setText(firstName + " " + mi +" " + lastName + "'s grade on course " + title + " is " +grade);
+    	//  lblStatus.setText(name+" has score "+score+" (with permission = "+permission+").");
       } else {
         lblStatus.setText("Not found");
       }

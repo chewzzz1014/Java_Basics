@@ -38,7 +38,9 @@ public class LabRMIClient extends Application {
   private void getScore() {
     try {
       // Get student score
-      String score = student.findScore(tfName.getText().trim());
+      String input = tfName.getText().trim();
+      String score = student.findScore(input.substring(0,1).toUpperCase()
+    		  			+input.substring(1).toLowerCase());
 
       tfScore.setText(score);
     }

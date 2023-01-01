@@ -6,10 +6,10 @@ import java.sql.*;
 // the actual implementation of RMI Server with remote method
 public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements LabRMIServerInterface {
 	
-	Statement statement;
+	private Statement stmt;
 	Connection connection;
 	ResultSet rset;
-	String result = "Not Found";
+	String result = "Not Found (Server)";
 	
 	public LabRMIServerInterfaceImpl() throws RemoteException{
 		initializeDB();
@@ -18,21 +18,15 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	private void initializeDB() {
 		try {
 			
-			Class.forName("org.apache.derby.jdbc.ClientDriver");
-			//Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 		      System.out.println("Driver loaded");
 
 		      // Establish a connection
 		      connection = DriverManager.getConnection
-		    		  ("jdbc:derby:javabook;user=scott;password=tiger");
+		    		  ("jdbc:derby:C:\\Users\\USER\\eclipse-workspace\\Database\\javabook;user=scott;password=tiger");
 		        
 		      System.out.println("Database connected");
-		      statement = connection.createStatement();
-		      
-		      String queryStr = "select * from Scores";
-		      rset = statement.executeQuery(queryStr);
-			  result = rset.getString(1);
-		      System.out.println(result);
+		      stmt = connection.createStatement();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -41,13 +35,17 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	public String findScore(String name)throws RemoteException {
 		initializeDB();	
 		try {
-			String queryStr = "select * from Scores";
-			//preparedStatement = connection.prepareStatement(queryStr);
-//			 preparedStatement.setString(1, name);
-//		     preparedStatement.setString(2, courseId);
-			 rset = this.statement.executeQuery(queryStr);
-			 result = rset.getString(1);
-			 System.out.println(result);
+			String queryStr = "select * from Scores where name='"+name+"'";
+			 rset = stmt.executeQuery(queryStr);
+			 if (rset.next()) {
+				 String stdName = rset.getString(1);
+				 double score = rset.getDouble(2);
+				 boolean permission = rset.getBoolean(3);
+				 if (permission)
+					 result = score+"";
+				 else
+					 result = "No Permission to View!";
+			 }
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
