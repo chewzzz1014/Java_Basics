@@ -1,3 +1,4 @@
+// Chew Zi Qing
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,8 +9,9 @@ import javafx.stage.Stage;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+// client that accesses database
 public class LabRMIClient extends Application {
-  // Declare a Student instance
+  // RMI server instance
   private LabRMIServerInterface student;
 
   private Button btGetScore = new Button("Get Score");
@@ -17,6 +19,7 @@ public class LabRMIClient extends Application {
   private TextField tfScore = new TextField();
 
   public void start(Stage primaryStage) {
+	// javafx ui
     GridPane gridPane = new GridPane();
     gridPane.setHgap(5);
     gridPane.add(new Label("Name"), 0, 0);
@@ -31,17 +34,22 @@ public class LabRMIClient extends Application {
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
     
+    // initialize server
     initializeRMI();
     btGetScore.setOnAction(e -> getScore());
   }
 
+  // event handler for btGetScore that returns gets student's score from server
   private void getScore() {
     try {
-      // Get student score
+      // get user input field
       String input = tfName.getText().trim();
+      // make the user input titlecase
+      // find the student's score from server
       String score = student.findScore(input.substring(0,1).toUpperCase()
     		  			+input.substring(1).toLowerCase());
 
+      // display score
       tfScore.setText(score);
     }
     catch(Exception ex) {
@@ -64,10 +72,6 @@ public class LabRMIClient extends Application {
     }
   }
 
-  /**
-   * The main method is only needed for the IDE with limited
-   * JavaFX support. Not needed for running from the command line.
-   */
   public static void main(String[] args) {
     launch(args);
   }
