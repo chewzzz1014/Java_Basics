@@ -6,7 +6,7 @@ import java.sql.*;
 // the actual implementation of RMI Server with remote method
 public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements LabRMIServerInterface {
 	
-	private Statement stmt;
+	private PreparedStatement stmt;
 	Connection connection;
 	ResultSet rset;
 	String result = "Not Found (Server)";
@@ -28,8 +28,11 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 		    		  ("jdbc:derby:C:\\Users\\USER\\eclipse-workspace\\Database\\javabook;user=scott;password=tiger");
 		        
 		      System.out.println("Database connected");
-		      // create statement instace
-		      stmt = connection.createStatement();
+		      
+		      String queryString = "select * from Scores where name= ?";
+		      
+		      // preparedstatement instance
+		      stmt = connection.prepareStatement(queryString);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -39,10 +42,9 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	public String findScore(String name)throws RemoteException {
 		//initializeDB();	
 		try {
-			// builds query
-			String queryStr = "select * from Scores where name='"+name+"'";
-			// execute query
-			 rset = stmt.executeQuery(queryStr);
+
+			 stmt.setString(1, name);
+			 rset = stmt.executeQuery();
 			 
 			 // get query result (based on the column's type)
 			 if (rset.next()) {
