@@ -37,7 +37,7 @@ public class LabRMIServerInterfaceImpl extends UnicastRemoteObject implements La
 	
 	// the actual implementation of finding score from database
 	public String findScore(String name)throws RemoteException {
-		initializeDB();	
+		//initializeDB();	
 		try {
 			// builds query
 			String queryStr = "select * from Scores where name='"+name+"'";
