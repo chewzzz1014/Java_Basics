@@ -6,7 +6,8 @@ public class MyResource_ms extends ListResourceBundle{
 			{"Student", "Pelajar"},
 			{"has", "mempunyai"},
 			{"correct count", "jawapan betul"},
-			{".", "."}
+			{".", "."},
+			{"Locale is not provided", "Makluman locale tidak dibekalkan"}
 		};
 	}
 }
