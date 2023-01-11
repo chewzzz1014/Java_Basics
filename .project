@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Internalization</name>
+=======
+	<name>Database</name>
+>>>>>>> 83ac1cd75b5f5c95f2989da385edd87690038f97
 	<comment></comment>
 	<projects>
 	</projects>

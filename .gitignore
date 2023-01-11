@@ -1,0 +1,10 @@
+/target/
+.classpath
+.project
+/.settings
+bin/
+.idea/
+/*iml
+/*.class
+/module-info.java
+Dayse*.java
