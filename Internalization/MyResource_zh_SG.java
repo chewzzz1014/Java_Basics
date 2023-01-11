@@ -1,6 +1,6 @@
 import java.util.ListResourceBundle;
 
-public class MyResource_cn extends ListResourceBundle{
+public class MyResource_zh_SG extends ListResourceBundle{
 	protected Object[][] getContents(){
 		return new Object[][] {
 			{"Student", "学生"},
