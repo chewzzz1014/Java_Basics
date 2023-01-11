@@ -5,7 +5,8 @@ public class MyResource_ms extends ListResourceBundle{
 		return new Object[][] {
 			{"Student", "Pelajar"},
 			{"has", "mempunyai"},
-			{"correct count", "jawapan betul"}
+			{"correct count", "jawapan betul"},
+			{".", "."}
 		};
 	}
 }

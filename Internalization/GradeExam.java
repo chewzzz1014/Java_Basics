@@ -1,7 +1,7 @@
 import java.util.*;
 public class GradeExam {
 	
-   private static ResourceBundle res = ResourceBundle.getBundle("MyResource_ms");
+   private static ResourceBundle res = ResourceBundle.getBundle("MyResource_cn");
 	
   /** Main method */
   public static void main(String[] args) {
@@ -28,9 +28,9 @@ public class GradeExam {
           correctCount++;
       }
 
-      System.out.printf("%s %d %s %d %s.\n", 
+      System.out.printf("%s %d %s %d %s%s\n", 
     		  			res.getString("Student"), i, res.getString("has"), 
-    		  			correctCount, res.getString("correct count"));
+    		  			correctCount, res.getString("correct count"), res.getString("."));
     }
   }
 }
