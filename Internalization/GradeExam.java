@@ -1,4 +1,8 @@
+import java.util.*;
 public class GradeExam {
+	
+   private static ResourceBundle res = ResourceBundle.getBundle("MyResource_ms");
+	
   /** Main method */
   public static void main(String[] args) {
     // Students' answers to the questions
@@ -24,8 +28,9 @@ public class GradeExam {
           correctCount++;
       }
 
-      System.out.println("Student " + i + "'s correct count is " +
-        correctCount);
+      System.out.printf("%s %d %s %d %s.\n", 
+    		  			res.getString("Student"), i, res.getString("has"), 
+    		  			correctCount, res.getString("correct count"));
     }
   }
 }
