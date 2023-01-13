@@ -1,5 +1,6 @@
 # Overview
-- Collection of Java  code and simple Java projects I've written.
+- Collection of Java code and simple Java projects I've built.
+- Contains all Java programs that I've written from semester 1 to semester 3 of my CS degree.
 - Branch `main` commit Java source code
 - Branch `JavaFX` commit JavaFX source code
 
