@@ -7,10 +7,11 @@ public class GradeExam {
   public static void main(String[] args){
 	 try {
 			 //System.out.println(Arrays.toString(args));
-		 	File file = new File("C:\\Users\\USER\\eclipse-workspace\\Internalization\\Internalization");
+		 	File file = new File("C:\\Users\\USER\\eclipse-workspace\\Internalization\\bin");
 		 	URL[] urls = {file.toURI().toURL()};
 		 	ClassLoader loader = new URLClassLoader(urls);
-		 	ResourceBundle res = ResourceBundle.getBundle("MyResource_ms_MY", new Locale("ms", "MY"), loader);
+		 	ResourceBundle res = ResourceBundle.getBundle("MyResource_zh_SG", new Locale("ms", "MY"), loader);
+		 	//ResourceBundle res = ResourceBundle.getBundle("MyResource_ms_MY");
 		 
 			    // Students' answers to the questions
 			    char[][] answers = {
