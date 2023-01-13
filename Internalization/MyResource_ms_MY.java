@@ -1,5 +1,7 @@
+// Chew Zi Qing 212360
 import java.util.ListResourceBundle;
 
+// Malaysia Malay locale
 public class MyResource_ms_MY extends ListResourceBundle{
 	protected Object[][] getContents(){
 		return new Object[][] {

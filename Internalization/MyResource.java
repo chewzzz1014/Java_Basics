@@ -1,5 +1,7 @@
+// Chew Zi Qing 212360
 import java.util.ListResourceBundle;
 
+// default locale
 public class MyResource extends ListResourceBundle{
 	protected Object[][] getContents(){
 		return new Object[][] {

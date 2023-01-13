@@ -1,32 +1,32 @@
+// Chew Zi Qing 212360
 import java.util.*;
-import java.io.*;
-import java.net.*;
 public class GradeExam {
 	
   /** Main method */
   public static void main(String[] args){
 	 try {
-//		 File file = new File("C:\\Users\\USER\\eclipse-workspace\\Internalization\\bin");
-//		 URL[] urls = {file.toURI().toURL()};
-//		 ClassLoader loader = new URLClassLoader(urls);
-		 //ResourceBundle res = ResourceBundle.getBundle("MyResource", new Locale("en", "MY"), loader);
+		 // default locale
 		 ResourceBundle res = ResourceBundle.getBundle("MyResource");
 		 	
+		 // to define the available locale code
 		 Map <String, String> localeCode = new HashMap<>();
 		    localeCode.put("en", "");
 		 	localeCode.put("ms", "MY");
 		 	localeCode.put("zh", "SG");
 		 
+		 	// no argument is provided
 			if (args.length == 0) {
 				System.out.println(res.getString("Locale is not provided"));
 				System.exit(0);
 			}
 			
 			String locale = args[0].toLowerCase();
+			// locale required by user is not english/malay/chinese
 			if (!localeCode.containsKey(locale)) {
 		 		System.out.println(res.getString("Invalid locale"));
 		 		System.exit(0);
 		 	}else{
+		 		// if it's not english, convert the locale
 		 		if (locale.equals("ms") || locale.equals("zh"))
 		 			res = ResourceBundle.getBundle("MyResource_"+locale+"_"+localeCode.get(locale));
 		 	}
