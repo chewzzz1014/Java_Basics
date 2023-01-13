@@ -6,12 +6,31 @@ public class GradeExam {
   /** Main method */
   public static void main(String[] args){
 	 try {
-			 //System.out.println(Arrays.toString(args));
-		 	File file = new File("C:\\Users\\USER\\eclipse-workspace\\Internalization\\bin");
-		 	URL[] urls = {file.toURI().toURL()};
-		 	ClassLoader loader = new URLClassLoader(urls);
-		 	ResourceBundle res = ResourceBundle.getBundle("MyResource_zh_SG", new Locale("ms", "MY"), loader);
-		 	//ResourceBundle res = ResourceBundle.getBundle("MyResource_ms_MY");
+//		 File file = new File("C:\\Users\\USER\\eclipse-workspace\\Internalization\\bin");
+//		 URL[] urls = {file.toURI().toURL()};
+//		 ClassLoader loader = new URLClassLoader(urls);
+		 //ResourceBundle res = ResourceBundle.getBundle("MyResource", new Locale("en", "MY"), loader);
+		 ResourceBundle res = ResourceBundle.getBundle("MyResource");
+		 	
+		 Map <String, String> localeCode = new HashMap<>();
+		    localeCode.put("en", "");
+		 	localeCode.put("ms", "MY");
+		 	localeCode.put("zh", "SG");
+		 
+			if (args.length == 0) {
+				System.out.println(res.getString("Locale is not provided"));
+				System.exit(0);
+			}
+			
+			String locale = args[0].toLowerCase();
+			if (!localeCode.containsKey(locale)) {
+		 		System.out.println(res.getString("Invalid locale"));
+		 		System.exit(0);
+		 	}else{
+		 		if (locale.equals("ms") || locale.equals("zh"))
+		 			res = ResourceBundle.getBundle("MyResource_"+locale+"_"+localeCode.get(locale));
+		 	}
+		 	
 		 
 			    // Students' answers to the questions
 			    char[][] answers = {

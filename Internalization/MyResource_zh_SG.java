@@ -7,7 +7,8 @@ public class MyResource_zh_SG extends ListResourceBundle{
 			{"has", "拥有"},
 			{"correct count", "正确答案"},
 			{".", "。"},
-			{"Locale is not provided", "未设置语言环境"}
+			{"Locale is not provided", "未设置语言环境"},
+			{"Invalid locale", "错误语言环境"}
 		};
 	}
 }

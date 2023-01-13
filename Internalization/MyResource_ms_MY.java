@@ -7,7 +7,8 @@ public class MyResource_ms_MY extends ListResourceBundle{
 			{"has", "mempunyai"},
 			{"correct count", "jawapan betul"},
 			{".", "."},
-			{"Locale is not provided", "Makluman locale tidak dibekalkan"}
+			{"Locale is not provided", "Makluman locale tidak dibekalkan"},
+			{"Invalid locale", "Makluman locale tidak sah"}
 		};
 	}
 }

@@ -7,7 +7,8 @@ public class MyResource extends ListResourceBundle{
 			{"has", "has"},
 			{"correct count", "correct count"},
 			{".", "."},
-			{"Locale is not provided", "Locale is not provided"}
+			{"Locale is not provided", "Locale is not provided"},
+			{"Invalid locale", "Invalid locale"}
 		};
 	}
 }
