@@ -31,7 +31,6 @@ public class GradeExam {
 		 			res = ResourceBundle.getBundle("MyResource_"+locale+"_"+localeCode.get(locale));
 		 	}
 		 	
-		 
 			    // Students' answers to the questions
 			    char[][] answers = {
 			      {'A', 'B', 'A', 'C', 'C', 'D', 'E', 'E', 'A', 'D'},
