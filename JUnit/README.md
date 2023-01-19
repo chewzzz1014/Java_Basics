@@ -1,5 +1,5 @@
 ## Install JUnit
-   - Instaal from [here](http://sourceforge.net/projects/junit/files/).
+   - Install from [here](http://sourceforge.net/projects/junit/files/).
    - Download junit-4.10.jar (could be different version)
 
 ## Set Classpath
