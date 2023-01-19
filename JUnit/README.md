@@ -22,5 +22,5 @@ java org.junit.runner.JUnitCore
    - Enter the working directory and run the following in cmd:
    
 ```
-java org.junit.runner.JUnitCore [ur java junut file]
+java org.junit.runner.JUnitCore [ur java JUnit file]
 ```
