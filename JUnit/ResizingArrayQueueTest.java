@@ -13,18 +13,14 @@ public class ResizingArrayQueueTest {
 
 	@Test
 	public void testIsEmpty() {
-		fail("Not yet implemented");
+		assertTrue(queue.isEmpty());
 	}
 	
 	@Test
 	public void testSize() {
-		fail("Not yet implemented");
+		assertEquals(0, queue.size());
 	}
 	
-	@Test
-	public void testResize() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testEnqueue() {
