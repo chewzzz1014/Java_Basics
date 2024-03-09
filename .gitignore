@@ -8,3 +8,6 @@ bin/
 /*.class
 /module-info.java
 Dayse*.java
+*.class
+*.iml
+*.jar
