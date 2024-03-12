@@ -55,7 +55,7 @@ public class ArrayListMain {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         // 3. for loop or iterator
-        IteratorMain<String> iterator = result2.iterator();
+        Iterator<String> iterator = result2.iterator();
         List<String> result4 = new ArrayList<>();
         while(iterator.hasNext()) {
             String s = iterator.next();

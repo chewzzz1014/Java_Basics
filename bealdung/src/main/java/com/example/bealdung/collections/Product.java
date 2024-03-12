@@ -8,6 +8,7 @@ public class Product {
     private String name;
     private String description;
     private List<String> tags;
+    private int price;
 
     public Product(String name, String description) {
         this.name = name;
@@ -18,6 +19,11 @@ public class Product {
         this.name = name;
         this.description = description;
         this.tags = tags;
+    }
+
+    public Product(double price, String name) {
+        this.price = price;
+        this.name = name;
     }
 
     public String getName() {
@@ -47,6 +53,14 @@ public class Product {
     public Product addTagsOfOtherProduct(Product product) {
         this.tags.addAll(product.getTags());
         return this;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override
