@@ -154,6 +154,6 @@ public class Stream2 {
             .stream()
             .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
 
-    
+
 
 }
